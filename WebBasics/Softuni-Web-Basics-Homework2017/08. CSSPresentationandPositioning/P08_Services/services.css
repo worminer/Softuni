@@ -1,0 +1,44 @@
+body { 
+	margin: 0;
+	padding: 0;
+	background-color: #f0f0e8;
+}
+
+body h1 { 
+	text-align: center;
+}
+
+body h2  {
+	text-align: center;
+
+}
+
+article h3 { 
+	text-align: center;
+}
+
+article {
+	display: inline-block;
+	width: 220px;
+	height: 223px;
+	border-left:  10px solid #009288;
+	border: transparent;
+}
+
+article p { 
+	text-align: center;
+}	
+article img { 
+	margin-left: 90px;
+}	
+
+article:first-child { 
+	margin-left: 354px;
+}	
+
+article:hover { 
+	background-color: #f6f6f6;
+	border: visible;
+	cursor: pointer;
+	border-left:  10px solid #009288;
+}

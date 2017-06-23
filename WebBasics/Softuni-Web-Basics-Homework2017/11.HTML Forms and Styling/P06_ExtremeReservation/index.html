@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extreme Sports</title>
+    <link href="main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<main>
+    <div class="main-container">
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a id="paragliding" class="active" href="#">Paragliding</a>
+                    </li>
+                    <li>
+                        <a id="skydiving" href="#">Skydiving</a>
+                    </li>
+                    <li>
+                        <a id="climbing" href="#">Climbing</a>
+                    </li>
+                    <li>
+                        <a id="about-us" href="#">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="form-container">
+            <form action="#" method="Get">
+                <fieldset id="left">
+                    <legend>Personal Info</legend>
+                    <div class="top">
+
+                        <input type="text" id="user" placeholder="Enter your full name" />
+                    </div>
+                    <div>
+                        <input type="text" id='email' placeholder="Enter a valid e-mail" />
+                    </div>
+                    <div>
+                        <input type="text" id='phone' placeholder="Enter a phone number" />
+                    </div>
+                </fieldset>
+
+                <fieldset id="right">
+                    <legend>Flight Info</legend>
+                    <div class="top">
+                        <span>Are you flying for first time?</span>
+                        <ul>
+                            <li>
+                                <input class="radio" type="radio"/>Yes
+                                <input class="radio" type="radio" />No
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span>Choose destination</span>
+                        <select>
+                            <optgroup label="Bulgaria"></optgroup>
+                            <option>Dobrostan</option>
+                            <option>Sopot</option>
+                            <option>Sofia</option>
+                            <option>Bourgas</option>
+                            <optgroup label="Rest of the world"></optgroup>
+                            <option>Nepal</option>
+                            <option>Turkey</option>
+                            <option>France</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span>Choose Date</span>
+                        <input type="date" placeholder="mm/dd/yyyy"/>
+                    </div>
+                </fieldset>
+                <div class = "bottom_buttons">
+                    <button type="reset">Clear</button>
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

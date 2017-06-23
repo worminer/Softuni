@@ -1,0 +1,111 @@
+/*!
+ * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+footer {
+    margin: 50px 0;
+}
+/** Contact/show **/
+.avatar_pic
+{
+    height:90px;
+    width:30%;
+    float:left;
+}
+.biz_cart
+{
+    height:100px;
+    width:67%;
+    margin-left:3%;
+    float:left;
+}
+.btn_cart
+{
+    float:right;
+    margine-top:25px;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+    height: 460px;
+}
+.category-img  {
+    width: 60px;
+    margin: 0 auto;
+}
+.user-row {
+    height: 60px;
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+.profile-picture {
+    background: url("../images/users/NoProfilePic.jpg") no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 250px
+}
+.profile-picture-small{
+    background: url("../images/users/NoProfilePic.jpg") no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 50px
+}
+.login{
+    align-content: center;
+    margin: 0 auto;
+    width: 80%;
+}
+h2 { font-family: "Roboto", cursive; margin: 0 0 50px; text-align: center;
+}
+
+ul li a.li-button {
+  text-decoration: none;
+  display: block;
+  height: 25px;
+  line-height: 25px;
+}
+.carousel .carousel-caption h3,
+.carousel .carousel-caption p {
+  text-shadow: 0 0 20px black;
+}
+.carousel .item img {
+  background: url("../images/users/NoProfilePic.jpg") no-repeat;
+  background-size: cover;
+}
+.container {
+    word-wrap: break-word;
+}
+/** End of Contact/show **/

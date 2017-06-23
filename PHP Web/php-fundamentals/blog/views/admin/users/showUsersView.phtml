@@ -1,0 +1,97 @@
+<script src="/resources/javascript/allusersshow.js"></script>
+<br><br>
+<div class="container">
+    <div class="well col-xs-12 col-sm-8 col-md-8 col-lg-8  col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+        {{#each users}}
+        <div class="row user-row">
+            <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
+                <img class="img-rounded img-responsive center-block profile-picture-small"
+                     src="{{value["profile_pic"]}}"
+                     alt="User Pic"
+                >
+            </div>
+            <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+                <strong>{{value["username"]}}</strong><br>
+                <span class="text-muted text-capitalize"><strong>User role:</strong> <em>{{value["userRoles"]}}</em></span>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-user" data-for=".cyruxx-{{value['id']}}">
+                <i class="glyphicon glyphicon-chevron-down text-muted"></i>
+            </div>
+        </div>
+        <div class="row user-infos cyruxx-{{value['id']}}">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">User information</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 ">
+                                <img class="img-rounded img-responsive center-block profile-picture"
+                                     src="{{value["profile_pic"]}}"
+                                     alt="User Pic"
+                                >
+                                <form class="text-center" action="/admin/changeProfilePicForUserIdPost" method="post" enctype="multipart/form-data">
+                                    <label class="btn btn-default btn-file">
+                                        <input type="file" name="image" hidden>
+                                        <input type="hidden" name="user_id" value="{{value['id']}}">
+                                        <input type="submit" name="change_profile_pic" value="Save New Image" >
+                                    </label>
+                                </form>
+                            </div>
+                            <div class="col-xs-10 col-sm-10 hidden-md hidden-lg">
+                                <strong>{{value["username"]}}</strong><br>
+                                <dl>
+                                    <dt>User role:</dt>        <dd>{{value["userRoles"]}}</dd>
+                                    <dt>Real Name</dt>         <dd>{{value["real_name"]}}</dd>
+                                    <dt>Email</dt>         <dd>{{value["email"]}}</dd>
+                                    <dt>Registered since:</dt> <dd>{{value["creation_date"]}}</dd>
+                                </dl>
+                            </div>
+                            <div class=" col-md-9 col-lg-9 hidden-xs hidden-sm">
+                                <strong>{{value["username"]}}</strong><br>
+                                <table class="table table-user-information">
+                                    <tbody>
+                                    <tr>
+                                        <td>User role:</td>
+                                        <td>{{value["userRoles"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Real Name</td>
+                                        <td>{{value["real_name"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{{value["email"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Registered since:</td>
+                                        <td>{{value["creation_date"]}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="pull-right">
+                           <div class="btn btn-sm btn-warning" data-original-title="Edit this user">
+                                <a href="/users/edit/{{value['id']}}">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                 </a>
+                           </div>
+                           <div class="btn btn-sm btn-danger" data-original-title="Delete">
+                                <a href="/admin/deleteUser/{{value['id']}}">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                 </a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </div>
+</div>

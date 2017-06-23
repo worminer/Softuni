@@ -1,0 +1,179 @@
+<form class="form-horizontal" action="{{formURL}}{{movie.id}}" method="post">
+    <fieldset>
+        <legend>{{formTitle}}  - {{ user.fullName }}</legend>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="title">Movie title:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="title" value="{{movieData.title}}" name="title" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="select" class="col-sm-4 control-label">Genres in DB:<br/>(if checked will be added to the movie)</label>
+            <div class="col-sm-4">
+                <select multiple="multiple" class="form-control" name="genres_in_db">
+                    {{#each movieData.genresInDB}}
+                        <option id="{{this}}" selected="selected">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="select" class="col-sm-4 control-label">Genres not in DB: <br/>(if checked will be added to db and the movie)</label>
+            <div class="col-sm-4">
+                <select multiple="multiple" class="form-control" name="genres_not_in_db">
+                    {{#each movieData.genresNotInDB}}
+                        <option id="{{this}}" selected="selected">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="directors">Movie director:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="directors" value="{{movieData.director}}" name="directors" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="writers">Movie writers:</label>
+            <div class="col-sm-4 ">
+                <input type="textarea" class="form-control" id="writers" value="{{movieData.writer}}" name="writers" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="actors">Movie actors:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="actors" value="{{movieData.actors}}" name="actors" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="plot" class="col-sm-4 control-label">Movie plot:</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" rows="5"  id="plot" name="plot">{{movieData.plot}}</textarea>
+                <span class="help-block"></span>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="youtube_trailers_str">Manually add youtube trailers: <br/>(only id's ,separated by comma)</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="youtube_trailers_str" value="{{movieData.youtube_trailers_str}}" name="youtube_trailers_str">
+            </div>
+        </div>
+
+        {{#each movieData.youtubeResults}}
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-4 control-label">Is this a valid Trailer ?</label>
+            <div class="col-sm-8">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="col-md-1"  name="youtube_trailers" value="{{this.id.videoId}}" checked>
+                    </label>
+
+                    <div class="col-md-11 trailer-holder-container pull-right">
+                        <iframe class="trailer-holder" width="100%" height="315" src="https://www.youtube.com/embed/{{this.id.videoId}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <div class="form-group"><label class="col-sm-4 control-label" for="languages">Movie languages:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="languages" value="{{movieData.languages}}" name="languages" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="countries">Movie country:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="countries" value="{{movieData.country}}" name="countries" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="awards">Movie awards:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="awards" value="{{movieData.awards}}" name="awards" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="poster_url">Movie poster url:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="poster_url" value="{{movieData.poster}}" name="poster_url" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="metascore">Movie metascore:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="metascore" value="{{movieData.metascore}}" name="metascore" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="rating">Movie rating:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="rating" value="{{movieData.rating}}" name="rating" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="imdb_users_voted">User votes:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="imdb_users_voted" value="{{movieData.votes}}" name="imdb_users_voted" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="imdb_id">imdb id:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="imdb_id" value="{{movieData.imdbid}}" name="imdb_id" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="imdb_url">imdb link:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="imdb_url" value="{{movieData.imdburl}}" name="imdb_url" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="release_date">Release date:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="release_date" value="{{movieData.released}}" name="release_date" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="release_year">Release year:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="release_year" value="{{movieData.year}}" name="release_year" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="rated">Rated:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="rated" value="{{movieData.rated}}" name="rated" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="runtime">Runtime:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="runtime" value="{{movieData.runtime}}" name="runtime" required>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="media_type">Media type:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="media_type" value="{{movieData.type}}" name="media_type" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tags_names" class="col-sm-4 control-label">Tags:</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" rows="2"  id="tags_names" name="tags_names">{{movieData.tags}}</textarea>
+                <span class="help-block"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4"><a class="btn btn-default" href="#">Cancel</a>
+                <button type="submit" class="btn btn-success">Save!</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

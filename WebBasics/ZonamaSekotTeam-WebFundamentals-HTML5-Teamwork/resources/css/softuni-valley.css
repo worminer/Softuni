@@ -1,0 +1,673 @@
+body {
+    background-color: #ffffff;
+    padding: 0;
+    margin: 150px 0 0 0;
+}
+/** Header Section Styles **/
+
+header nav h1.logo {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Sansita', sans-serif;
+    font-size: 40px;
+    line-height: 35px;
+    color: #ffffff;
+    padding-top: 15px;
+    text-shadow: 0 0 5px #ffffff;
+    margin-top: 7px;
+}
+header nav h1.logo span {
+    display: block;
+    font-size: 50px;
+    letter-spacing: 5px;
+    margin-left: 70px;
+}
+header .navbar-default {
+    background-color: #7A0000;
+    border-color: #7A0000;
+    height: 150px;
+}
+.navbar-default .navbar-nav > li {
+    transition: transform 0.5s;
+    /* makes transformation size slower so it will not look jumpy */
+}
+.navbar-default .navbar-nav > li > a {
+    padding: 20px 14px 10px 14px;
+}
+.navbar-default .navbar-nav > li > a p {
+    margin-top: 15px;
+}
+/* puts an image for the link */
+
+.navbar-default .navbar-nav > li.home > a > div.home-image {
+    background: url('../images/home-softuni-logo.png') no-repeat;
+    width: 96px;
+    height: 50px;
+    background-size: contain;
+    content: "";
+}
+/* puts an image for the link */
+
+.navbar-default .navbar-nav > li.news > a > div.news-image {
+    background: url('../images/news.png') no-repeat;
+    width: 96px;
+    height: 50px;
+    background-size: contain;
+    content: "";
+}
+/* puts an image for the link */
+
+.navbar-default .navbar-nav > li.team > a > div.team-image {
+    background: url('../images/team.png') no-repeat;
+    width: 96px;
+    height: 50px;
+    background-size: contain;
+    content: "";
+    display: table;
+}
+/* puts an image for the link */
+
+.navbar-default .navbar-nav > li.contacts > a > div.contacts-image {
+    background: url('../images/contacts.png') no-repeat;
+    width: 96px;
+    height: 50px;
+    background-size: contain;
+    content: "";
+}
+/* Override bootstrap for Header Section */
+/* small size screen */
+
+.navbar-default .navbar-nav > li > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ffffff;
+    transition: text-shadow 0.5s;
+    /* makes the transition slower for text shadow so it wil look slizy */
+    
+    text-shadow: 0 0 5px #ffffff;
+}
+@media(max-width:767px) {
+    .navbar-default .navbar-nav {
+        margin: 0 auto;
+        /* moves the nav to be a little bit more in right*/
+    }
+    nav li:hover {
+        -webkit-transform: scale(0.95);
+        /* Safari and Chrome */
+
+        -moz-transform: scale(0.95);
+        /* Firefox */
+
+        -ms-transform: scale(0.95);
+        /* IE 9 */
+
+        -o-transform: scale(0.95);
+        /* Opera */
+
+        transform: scale(0.95);
+    }
+    /*this makes the menu to be blocks and not lines*/
+    /* puts the menu text under the picture*/
+    
+    .navbar-default .navbar-nav > li > a > p {
+        display: block;
+    }
+    /* makes the navbar horizontal line to be colored red */
+    .navbar-default .navbar-collapse ul {
+        display: inline-block;
+    }
+    .navbar-default .navbar-collapse {
+        text-align: center;
+        border-color: #B40000;
+        overflow:hidden;
+        margin-top: 33px;
+    }
+    /* on small screen display the brand logo in center */
+    
+    .navbar-brand {
+        display: block;
+        text-align: center;
+        float: none;
+    }
+    /* puts the logo to top */
+    
+    .navbar-brand h1.logo {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    /* fixes span to be centered */
+    
+    .navbar-brand h1.logo span {
+        margin-left: 0;
+    }
+}
+/* media query extra small screen  */
+
+@media(max-width:460px) {
+    /* moves the body lower so it will be just under the menu */
+    
+    body {
+        margin-top: 100px;
+    }
+    /* makes the navigation 100px  */
+    
+    header .navbar-default {
+        height: 100px;
+    }
+
+    .navbar-header {
+        margin-top: 20px;
+    }
+
+    .navbar-brand h1.logo {
+        font-size: 20px;
+        line-height: 18px;
+    }
+    .navbar-brand h1.logo span {
+        font-size: 25px;
+    }
+    /* pushes the button and navigation lower */
+    
+    .navbar-toggle {
+        margin-top: -30px;
+    }
+    /* makes the navbar horizontal line to be colored red */
+    
+    .navbar-default .navbar-collapse {
+        border-color: #B40000;
+    }
+    .navbar-default .navbar-nav > li {
+        width: 75px;
+        /* fixed width so they look all the same */
+        
+        height: 82px;
+        border: 1px solid #B40000;
+        /* border so they are not looking bad */
+        
+        background: #7A0000;
+        margin: 1px;
+        /* margin so they will not hit each other */
+        
+        font-size: 10px;
+    }
+    .navbar-collapse.in {
+        overflow-y: hidden;
+        margin-top: 17px;
+    }
+    /* this makes the menue icon pictures smaller so they can fit inside the mobile menu */
+    
+    .navbar-default .navbar-nav > li > a {
+        padding-top: 15px;
+    }
+    .navbar-default .navbar-nav > li > a > div {
+        display: inline-block;
+        width: 48px !important;
+        /* height = width / 1.92 */
+        
+        height: 25px !important;
+        /* width = height * 1.92 */
+    }
+    .navbar-default .navbar-nav > li > a p {
+        margin-top: 5px;
+    }
+}
+@media (min-width: 461px) and (max-width: 767px) {
+    /* moves the body lower so it will be just under the menu */
+    
+    body {
+        margin-top: 100px;
+    }
+    /* makes the navigation 100px  */
+    
+    header .navbar-default {
+        height: 130px;
+    }
+    /* pushes the button and navigation lower */
+    
+    .navbar-toggle {
+        margin-top: 5px;
+    }
+    .navbar-brand h1.logo {
+        font-size: 40px;
+        line-height: 35px;
+        margin-top: 15px;
+    }
+    .navbar-brand h1.logo span {
+        font-size: 40px;
+    }
+    .navbar-default .navbar-nav > li {
+        height: 110px;
+        width: 100px;
+        /* fixed width so they look all the same */
+        
+        border: 1px solid #B40000;
+        /* border so they are not looking bad */
+        
+        background: #7A0000;
+        margin: 1px;
+        /* margin so they will not hit each other */
+    }
+    /* this makes the menue icon pictures smaller so they can fit inside the mobile menu */
+    
+    .navbar-default .navbar-nav > li > a > div {
+        display: inline-block;
+        width: 67px !important;
+        /* height = width / 1.92 */
+        
+        height: 35px !important;
+        /* width = height * 1.92 */
+    }
+}
+/* media queries for small screen */
+/* media queries for bigger screens (md and lg) */
+
+@media (min-width: 768px) {
+    nav li:hover {
+        -webkit-transform: scale(1.25);
+        /* Safari and Chrome */
+        
+        -moz-transform: scale(1.25);
+        /* Firefox */
+        
+        -ms-transform: scale(1.25);
+        /* IE 9 */
+        
+        -o-transform: scale(1.25);
+        /* Opera */
+        
+        transform: scale(1.25);
+    }
+}
+/* media queries for medium screen (md)*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* fixes the right nav margin */
+    
+    .navbar-right {
+        margin-right: 6px;
+    }
+    /* fixes brand logo left margin */
+    
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: 6px;
+    }
+    /* fixes the navigation button sizes so they will not to the logo */
+    
+    .navbar-default .navbar-nav > li > a {
+        margin-top: 17px;
+        padding: 20px 5px 10px 5px;
+    }
+}
+/* media queries for large screen (lg) */
+
+@media(min-width:992px) {
+    /* fixes the right side margin of the navigation */
+    
+   .navbar-right {
+        margin-right: 80px;
+        margin-top: 17px;
+    }
+    /* fixes the brand logo left margin */
+    
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: 80px;
+    }
+}
+/** End of Header Section Styles **/
+/** Main Section Styles**/
+
+#news {
+    background-color: #2C2A2D;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 5px 5px #4d0000;
+    font-size: 40px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+/* Main Section Articles */
+
+.article-container {
+    padding: 20px 40px;
+    border-radius: 30px;
+    word-wrap: break-word;
+    text-align: justify;
+    max-width: 80%;
+    min-height: 250px;
+    margin: 0 auto 45px auto;
+    box-shadow: 0 0 30px 0 rgba(255, 255, 255, 1);
+}
+
+.article-container .summary {
+    font-weight: bold;
+    color: #7A0000;
+    font-size: 17px;
+    text-align: center;
+}
+.article-container .date {
+    display: block;
+    text-decoration: underline;
+    font-size: 12px;
+    color: #7A0000;
+
+    margin-right: 15px;
+    font-weight: 900;
+    text-align: right;
+}
+#news #news-holder img {
+    display: inline-block;
+    width: 140px;
+    height: 110px;
+}
+.img-left {
+    float: left;
+    margin: 0 10px 20px 0;
+}
+.img-right {
+    float: right;
+    margin: 0 0 20px 10px;
+}
+.article-image-container {
+    display: inline-block;
+    width: 140px;
+    height: 110px;
+}
+main article .article-author span,
+main article .article-date span,
+main article .article-tags span {
+    padding: 0 5px 0 2px;
+}
+main article .article-author {
+    margin-left: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+main article .article-date,
+main article .article-tags {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+main article header {
+    margin-bottom: 20px;
+}
+/* End of Main Section Articles */
+/* Main Section - Team */
+
+main .team-info {
+    background: #2C2A2D;
+    margin-bottom: 30px;
+    min-height: 420px;
+}
+main .team-info .team-members-container {
+    height: auto;
+}
+main .team-info .team-member {
+    margin: 0 auto;
+    height: 100%;
+    text-align: center;
+}
+main .team-info .team-member .member-image {
+    display: block;
+    margin: 20px auto;
+    height: 200px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 0 14px #fff, 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 8px 17px #acacac;
+}
+.social-container {
+    display: inline-block;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+.team-member .name {
+    font-size: 25px;
+    color: #A74FA4;
+    font-style: italic;
+}
+.team-member .name:hover {
+    text-decoration: underline;
+}
+.team-member .fa {
+    font-size: 20px;
+    color: #ffffff;
+}
+.team-member .fa:hover {
+    color: #FFFFFF;
+}
+
+/* End of Main Section - Team */
+/** End of Main Section Styles **/
+/** Footer Section Styles **/
+
+footer {
+    margin-top: -30px;
+}
+footer #contacts {
+    background-color: #2C2A2D;
+    min-height: 340px;
+}
+footer .contacts-block {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+}
+@media (max-width: 767px) {
+    footer .contacts-block h3 {
+        text-align: left;
+    }
+}
+/* footer Initiatives block */
+
+footer .initiatives {
+    color: #ffffff;
+}
+footer .initiatives ul {
+    margin-left: 20px;
+}
+footer .initiatives li {
+    list-style: none;
+    padding-top: 5px;
+    text-align: left;
+}
+footer .initiatives li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+/* End of footer Initiatives block */
+
+footer .initiatives ul li:hover a,
+footer .more-contacts li:hover {
+    color: #A74FA4;
+    cursor: pointer;
+}
+/* More Contacts block */
+
+footer .more-contacts li {
+    display: block;
+    color: #ffffff;
+    font-size: 17px;
+    padding-top: 5px;
+    text-align: left;
+}
+/* End of More Contacts block */
+/* Footer social icons Block */
+
+.contact-wrapper {
+    text-align: center;
+    margin: 0 auto;
+}
+footer h3 {
+    color: #A74FA4;
+    text-transform: uppercase;
+    text-align: center;
+}
+footer .apply-button {
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 auto;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 14px;
+    background-color: purple;
+    border: none;
+}
+footer .apply-button:hover {
+    background-color: #4d004d;
+    color: #ffffff;
+}
+footer .footer-social-icons-container {
+    display: block;
+    margin: 0 auto;
+}
+footer .social-icon-link {
+    color: #fff;
+    font-size: 2em;
+    width: 48px;
+    height: 48px;
+}
+footer div.social-icons {
+    padding-left: 0;
+    margin: 0 auto;
+    display: table;
+}
+footer .social-icons div {
+    display: inline-block;
+}
+footer .footer-social-icons-container .fa,
+main .team-info .social-icons .fa{
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+footer .fa-facebook:hover,
+main .team-info .social-icons .fa-facebook:hover{
+    background-color: #4862A3;
+}
+footer .fa-twitter:hover {
+    background-color: #1DA1F2;
+}
+footer .fa-rss:hover {
+    background-color: #eb8231;
+}
+footer .fa-youtube:hover {
+    background-color: #E62117;
+}
+footer .fa-google-plus:hover {
+    background-color: #DB4437;
+}
+footer .fa-github:hover,
+main .team-info .social-icons .fa-github:hover{
+    background-color: #5e6469;
+}
+footer .fa-instagram:hover {
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+        /* left top */
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+        /* right top */
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+        /* right bottom */
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+        /* create a base coat to smooth */
+        /* corner gradients */
+    linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+/* End of Footer social icons block */
+/* Copyright section */
+
+.copyright-container {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    background-color: #7A0000;
+    text-align: center;
+}
+.copyright {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+/* swing effect */
+.swing:hover
+{
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+.clear {
+    clear: both;
+}
+/* makes <hr class="special" look good > */
+hr.special {
+    height: 30px;
+    border: 0 solid #8c8b8b;
+    border-top-width: 1px;
+    border-radius: 20px;
+}
+
+hr.special:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border: 0 solid #8c8b8b;
+    border-bottom-width: 1px;
+    border-radius: 20px;
+}

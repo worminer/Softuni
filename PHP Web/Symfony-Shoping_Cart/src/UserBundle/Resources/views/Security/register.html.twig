@@ -1,0 +1,16 @@
+{% form_theme register_form 'UserBundle:Form:bootstrap_3_horizontal_layout_special.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block main %}
+<section class="row">
+    <div class="col-md-6 col-md-offset-2">
+        {{ form_start(register_form) }}
+        <fieldset>
+            <legend>Register</legend>
+            {{ form_widget(register_form) }}
+        </fieldset>
+        {{ form_end(register_form) }}
+    </div>
+</section>
+
+{% endblock %}

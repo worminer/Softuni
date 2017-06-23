@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{@site_title}
+        {{#if sub_title}}
+            &nbsp;-&nbsp;{#sub_title}
+        {{/if}}
+
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.Cerulean.min.css" rel="stylesheet">
+    <!-- Font Awasome CSS -->
+    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/resources/css/blog-main.css" rel="stylesheet">
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="/resources/javascript/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/resources/javascript/bootstrap.min.js"></script>
+
+    <script src="/resources/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor wordcount emoticons',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste code'
+            ],
+            toolbar: 'undo redo | insert | styleselect fontsizeselect fontselect| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | emoticons | code',
+            content_css: 'http://www.tinymce.com/css/codepen.min.css',
+            fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+            font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n',
+        });
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>

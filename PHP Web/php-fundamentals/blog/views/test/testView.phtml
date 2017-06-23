@@ -1,0 +1,133 @@
+<!-- Blog Entries Column -->
+<div class="col-md-8">
+    <div class="well">
+        <h1>in this page you can see example usage of templates</h1>
+        {{#if sub_titles}}
+        {#sub_title}
+        {{/if}}
+        <div>
+            if an array is given with name "links" it will foreach and return the block count(array) number of times;<br>
+            if this is associative array you can use {{key}} as array key and {{value}} as array value;<br>
+            if this is indexed array you can use {{value}} and the {{key}} parameter will be the assigned index inside the array ;<br>
+            if else parameter is given .. his content will be shown only when the list is empty;<br>
+            if list is empty and there is no else param it will display empty string;<br>
+            <br>
+            example: indexed gets array linksValues
+            <br>
+            {{#each linksValues}}
+            <span>element #{{#number}} has index of {{#index}} in the array:</span><a href="{{value}}" > {{key}} </a><br>
+            {{else}}
+            <b>There are no links</b>
+            {{/each}}
+            <br>
+            example: associative gets array linksKeyValues
+            <br>
+            {{#each linksKeyValues}}
+                <span>element #{{#number}} has index of {{#index}} in the array:</span><a href="{{value}}" > {{key}} </a><br>
+            {{else}}
+                <b>There are no links</b>
+            {{/each}}
+            <br>
+            <br>
+
+            example: associative gets array dbResults witch has an array as value
+            <br>
+
+            {{#each dbresults}}
+            <span> result id {{key}} have a values: name = {{value["name"]}}, apples = {{ value["apples"] }} and life city = "{{value["city"]}}"</span><br>
+            {{else}}
+                <b>There are no results</b>
+            {{/each}}
+            <br>
+            <br>
+            example: indexed gets array dbResultsIndexed witch has an array as value
+            <br>
+            {{#each dbResultsIndexed}}
+                <span> result id {{key}} have a values: name = {{value[0]}}, apples =  {{ value[1] }} and lives in city = "{{value[2]}}"</span><br>
+            {{else}}
+                <b>There are no results</b>
+            {{/each}}
+            <br>
+
+        </div>
+        <hr>
+
+        <div>
+            <h2>example of unless template logic</h2>
+            if variable with name "second" is given then it will check if its true or false <br>
+            if it is false then will display the block <br>
+            if it is true it will display an empty string <br>
+            <br>
+            example:
+            <br>
+            {{#unless unlessVariable}}
+                unless the bool is true .. show this message!
+            {{/unless}}
+        </div>
+        <hr>
+        <h2>example of if template logic</h2>
+        <div>
+            if variable with name "first" is given then it will check if its true or false<br>
+            if it is true then will display the block<br>
+            if it is false it will display an empty string<br>
+            <br>
+            example:
+            <br>
+            {{#if ifVariable}}
+                if true do this!
+            {{/if}}
+        </div>
+        <hr>
+        <div>
+            <h2>example of if else template logic</h2>
+            if variable with name "first" is given then it will check if its true or false <br>
+            if it is true then will display the block from if to else<br>
+            if it is false will display the else to end of the if<br>
+            <br>
+            example:
+            <br>
+            {{#if ifVariable}}
+                if true do this!
+            {{else}}
+                else do this!
+            {{/if}}
+        </div>
+        <hr>
+        <div >
+            <h2>how to display variables send from controller</h2>
+            - if it is a string, int or float it will be displayed as string<br>
+            - if the variable is type bool then will be converted to string true/false<br>
+            - if it is an array it will be inplode() to string<br>
+            <br>
+            examples:
+            <br>
+            This is a string    => {#stringVariable}<br>
+            This is a bool      => {#boolVariable}<br>
+            This is an array    => {#arrayVariable} - not supported yet<br>
+        </div>
+        <hr>
+        <div >
+            <h2>how to display GLOBAL Variables</h2>
+            - if it is a string, int or float it will be displayed as string<br>
+            - if the variable is type bool then will be converted to string true/false<br>
+            - if it is an array it will be inplode() to string<br>
+            <br>
+            examples:
+            <br>
+            This displays the site title        => {@site_title}<br>
+            This checks if user is logged in    => {@isLogged}<br>
+            This checks if logged user is user  => {@isUser}<br>
+            This checks if logged user is admin => {@isAdmin}<br>
+            <br>
+            Display global and local vars as array<br>
+            IndexedArray -> {#IndexedArr[1]}<br>
+            {#AssocArr["first"]}<br>
+            {#AssocArr['second']}<br>
+        </div>
+        <hr>
+    </div>
+</div>
+<!-- Blog Sidebar Widgets Column -->
+<div class="col-md-4">
+    {>sidebar}
+</div>

@@ -1,0 +1,25 @@
+<div class="container body-content span=8 offset=2">
+    <div class="box well">
+        <div class="col-lg-12">
+            <hr>
+            <h2 class="intro-text text-center">Our
+                <strong>Team</strong>
+            </h2>
+            <hr>
+        </div>
+        {{#each developersInfo}}
+            <div class="col-sm-4 portret-container">
+                <div class=" text-center post-inner portret-style">
+                    <img class="img-responsive" src="{{this.picture}}" alt=""/>
+                    <h3>{{this.name}}
+                        <small>{{this.jobTitle}}</small>
+                    </h3>
+                </div>
+            </div>
+
+        {{/each}}
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+

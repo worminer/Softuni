@@ -1,0 +1,26 @@
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal" id="comment" method="POST" action="/comment/create/{{this.id}}">
+            <fieldset>
+                <legend>Add your comment for the movie</legend>
+                <h6>From: {{user.fullName}}</h6>
+
+                <div class="form-group">
+
+                    <input type="text" value="{{user.id}}" name="author" hidden>
+                    <input type="text" value="{{this.id}}" name="about" hidden>
+
+                    <label class="col-sm-4 control-label" for="content">Your Comment:</label>
+                    <div class="col-sm-4 ">
+                        <textarea type="text" rows="5" class="form-control" id="content" placeholder="Comment" name="content"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <button type="submit" class="btn btn-success">Post</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

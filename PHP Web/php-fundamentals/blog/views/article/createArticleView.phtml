@@ -1,0 +1,34 @@
+<!-- Blog Login Form  -->
+<div class="col-md-10 col-md-offset-1">
+    <div class="login-panel panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Create new Article</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" action="/article/createPost">
+                <fieldset>
+                    <div class="form-group"  >
+                        <input class="form-control" placeholder="Post Title" name="title" type="text" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Post Content" name="content" type="text"  required>
+
+                        </textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <select multiple="multiple" name="selected_categories[]" class="form-control">
+                            {{#each categories}}
+                                <option value="{{value['id']}}">{{value['name']}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="col-md-3 down">
+                        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Create New Article" name="createArticle" >
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- End of  Blog Login Form  -->

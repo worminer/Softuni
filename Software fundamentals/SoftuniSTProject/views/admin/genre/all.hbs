@@ -1,0 +1,24 @@
+<div class="container body-content">
+    <div class="well"><h2>All Categories - <a href="/admin/genre/create" class="btn btn-warning">Create New</a></h2>
+        <div class="row">
+            <table class="table table-striped table-hover table-seperators">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Number of movies</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody> {{#each genres}}
+                    <tr>
+                        <td>{{ this.id }}</td>
+                        <td>{{ this.name }}</td>
+                        <td>{{ this.movies.length }}</td>
+                        <td><a href="/admin/genre/edit/{{this.id}}" class="btn btn-default btn-xs" >Edit</a> <a
+                                href="/admin/genre/delete/{{this.id}}" class="btn btn-default btn-xs" >Delete</a></td>
+                    </tr> {{/each}} </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+@media(max-width:640px) {
+  .nav-primary {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-item {
+    text-align: center;
+    align-self: center;
+  }
+  .nav-item a {
+    margin: 0;
+  }
+
+  .solo {
+    text-align: center;
+  }
+  .second-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .mixr-left,
+  .urbeats-right {
+    width:auto;
+    align-items: center;
+  }
+
+  .studio {
+    text-align: center;
+  }
+  .grid-gallery {
+    display: inline-block;
+    /* това е за да може  product-img да е центрирано и да има 1% от ляво и от дясно*/
+    text-align: center;
+  }
+
+  /* това е малко малоумщина но работи .. */
+  .product-img {
+    width:49%;
+  }
+}

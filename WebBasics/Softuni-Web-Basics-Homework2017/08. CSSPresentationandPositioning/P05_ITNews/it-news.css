@@ -1,0 +1,62 @@
+body { 
+	width: 610px;
+	margin: 0;
+	padding: 0;
+}
+
+article { 
+	width: 280px;
+	display: inline-block;
+	border: 1px solid #d4d4d4;
+	vertical-align: top;
+	width: 290px;
+	box-shadow: 6px 6px 3px 0px rgba(212,212,212,1);
+	margin: 5px;
+
+}
+
+article h1 {
+	font-family: Verdana;
+	font-size: 13px;
+	margin-left: 5px;
+	color: #220000;
+ }
+
+article h6 { 
+	font-family: Arial;
+	font-size: 10px;
+	margin-left: 5px;
+	color: #9f97a2;
+}
+
+article p { 
+	font-family: Helvetica;
+	font-size: 13px;
+	margin-left: 5px;
+}
+
+.nvidia-text { 
+	font-family: Helvetica;
+	font-size: 13px;
+	margin-left: 5px;
+	padding-bottom: 15px;
+}
+
+.nest-text {
+	font-family: Helvetica;
+	font-size: 13px;
+	margin-left: 5px;
+	padding-bottom: 15px;
+}
+
+article img { 
+	float: left;
+}
+
+article a { 
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}

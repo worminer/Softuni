@@ -1,0 +1,23 @@
+
+<div class="col-md-6 col-md-offset-3">
+    <div class="login-panel panel panel-success">
+        <div class="panel-warning">
+            <h3 class="panel-title">Edit Category</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" action="/categories/editPost/{#id}">
+                <fieldset>
+                    <div class="form-group col-md-12"  >
+                        <strong>Change category name to:</strong>
+                    </div>
+                    <div class="form-group col-md-6"  >
+                        <input class="form-control" name="name" type="text" value="{#name}" autofocus required>
+                    </div>
+                    <div class="form-group col-md-6"  >
+                        <input type="submit" class="btn btn-warning btn-block" name="edit_category" value="Edit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

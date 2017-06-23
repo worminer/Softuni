@@ -1,0 +1,6 @@
+http://websitecsstemplates.com/portal/
++ moviehunter_free_standard.zip
++ moviereviews_free_standard.zip
+
+тия искат да има следния линк за да можем да ползваме тяхния дизайн
+<p class="copy">Copyright &copy; 2012 <span>|</span> Sitename. Design by <a href="http://chocotemplates.com" target="_blank">ChocoTemplates.com</a></p>

@@ -1,0 +1,96 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body {
+  background: linear-gradient(135deg, #14353F 0%,#5F676D 100%) no-repeat;
+  font-size: 16px;
+  font-family: sans-serif;
+  height: 100vh;
+  color: #9E9E9E;
+}
+
+.order-container {
+  background-color: #FFFFFF;
+  width:900px;
+  height: 500px;
+  margin: 60px auto;
+  border-radius: 10px;
+}
+
+.left-image-holder {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+.left-image-holder img {
+  position: absolute;
+  top: -20px;
+  left: 60px;
+  left: 60px;
+  height: 540px;
+}
+
+.form-container {
+  float: right;
+  margin: 10px 60px;
+  height: 400px;
+  text-align: right;
+}
+.order-title {
+  font-size: 2em;
+  color: #9E9E9E;
+  width: 500px;
+  text-transform: uppercase;
+}
+
+.price-tag {
+  font-size: 2em;
+  color: #7D7D7D;
+}
+
+.buy-form {
+  margin-top: 45px;
+}
+
+.form-left,
+.form-right {
+  color: #575757;
+  display: inline-block;
+  margin: 5px;
+  font-size: 30px ;
+}
+.form-group {
+  border-bottom: 1px solid #585754;
+  margin: 10px;
+  text-align: center;
+}
+
+input {
+  height: 30px;
+  border: none;
+  margin-left: 10px;
+
+}
+input::-webkit-input-placeholder {
+  color: rgba(204, 204, 204, 0.85);
+  text-transform: uppercase;
+}
+input:focus {
+  outline: none;
+}
+.submit-cta {
+  padding: 20px 30px;
+  background-color: #535E66;
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  line-height: 5px; /* това е много страно ? */
+  font-size: 16px;
+}
+.form-group-btn {
+  margin-top: 40px;
+  margin-right: 60px ;
+}
+.clear {
+  clear: both;
+}

@@ -1,0 +1,110 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+
+ul,
+nav,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  font-family: Tahoma, Helvetica, sans-serif;
+
+  margin: 0 auto;
+}
+
+/** Header Styles **/
+header nav {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header nav ul {
+  background-color: #384452;
+}
+
+header nav li {
+  display: inline-block;
+  list-style: none;
+  padding: 25px;
+}
+
+header nav li a {
+  text-decoration: none;
+  margin-left: 15px;
+  color: #8BAEC2;
+}
+
+header nav li a::before {
+  font-family: FontAwesome, serif;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+header nav li a#searchBtn::before {
+  content: "\f002";
+}
+
+header nav li a#tagsBtn::before{
+  content: "\f02c";
+}
+
+header nav li a#locationBtn::before {
+  content: "\f041";
+}
+
+header nav li a#userBtn::before {
+  content: "\f007";
+}
+
+li:hover {
+  background-color: #3BBC96;
+}
+
+header nav li:hover a {
+  color: #ffffff;
+}
+/** End of Header Styles **/
+/** Main styles **/
+main .main-wrapper {
+  background-color: #EEEEEE;
+  margin: 0 auto;
+  max-width: 900px;
+
+}
+
+main form label {
+  color: #374574;
+  display: inline-block;
+  font-weight: bold;
+  width: 165px;
+  margin-left: 38px;
+  margin-top: 20px;
+}
+
+main form input {
+  border: 1px solid #CDCDCD;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 46px;
+  padding-left: 14px;
+  width: 90%;
+}
+
+main form button {
+  vertical-align: top;
+  margin-left: 38px;
+  width: 190px;
+  height: 46px;
+  text-transform: uppercase;
+  background-color: #384452;
+  color: #CED1CA;
+}
+
+main form button:hover {
+  background-color: #3BBC96;
+  color: #FFF7E4;
+  cursor: pointer;
+}
+/** End of Main styles **/

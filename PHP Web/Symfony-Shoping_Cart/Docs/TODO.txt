@@ -1,0 +1,9 @@
+- optimize image upload ..
+- pagination for
+	- categories
+	- items
+	
+- order products
+- create new card if there are none .. at the repository - fetchNewestCart()
+
+- user CruD

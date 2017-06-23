@@ -1,0 +1,20 @@
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal" action="/admin/genre/edit/{{genre.id}}" method="POST">
+            <fieldset>
+                <legend>Edit Genre</legend>
+                <div class="form-group"><label class="col-sm-4 control-label" for="name">Genre Name</label>
+                    <div class="col-sm-4 ">
+                        <input type="text" class="form-control" id="name" placeholder="Genre Name" name="name" value="{{ genre.name }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <a class="btn btn-default" href="/admin/genre/all">Cancel</a>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

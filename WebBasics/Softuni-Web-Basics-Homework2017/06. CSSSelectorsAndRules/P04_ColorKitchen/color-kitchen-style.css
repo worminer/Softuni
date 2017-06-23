@@ -1,0 +1,125 @@
+﻿/* latin-ext */
+@font-face {
+  font-family: 'Sansita';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sansita Regular'), local('Sansita-Regular'), url(https://fonts.gstatic.com/s/sansita/v1/OIg80uztPzTvmaigz6QbovY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Sansita';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sansita Regular'), local('Sansita-Regular'), url(https://fonts.gstatic.com/s/sansita/v1/hJSyxUQeTBqx_NJRx-g3LA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+html {
+  font-family: Sansita,sans-serif;
+  background-color: rgba(245, 230, 254, 0.9);
+  font-size: 20px;
+}
+
+body {
+  background: url("images/bg.jpg");
+}
+
+body>header {
+  background: rgba(255,0,0,1);
+  background: linear-gradient(to right, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 33%, rgba(0,128,0,1) 33%, rgba(0,128,0,1) 66%, rgba(0,0,255,1) 66%, rgba(0,0,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#0000ff', GradientType=1 );
+  font-size: 2em;
+  text-align: center;
+  color: #FFFF00;
+}
+
+body aside,body article {
+  background: rgba(255, 255, 255, 0.8);
+  margin: 20px 10px;
+}
+
+body aside{
+  margin-right: 0px;
+  float: left;
+  width: 200px;
+  border-radius: 15px;
+  padding-right: 15px;
+}
+
+body nav header {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+body nav ul {
+  -webkit-padding-start: 0;
+  margin-left: 10px;
+}
+
+body nav ul li{
+  padding: 0 10px;
+ list-style: none;
+
+}
+body nav ul li:before{
+  content: url("images/a.png");
+}
+body nav ul li:hover {
+
+  background-color: #2EA620;
+  border-radius: 10px;
+}
+
+body nav ul li:first-child:hover {
+  background-color: #ff0000;
+}
+
+body nav ul a {
+  padding-left: 5px;
+  text-decoration: none;
+  color: #000000;
+}
+
+body main{
+  margin-left: 250px;
+  width: 1000px;
+}
+
+body article {
+  border-radius: 5px;
+  padding: 10px;
+}
+article header {
+  border-radius: 5px;
+  padding: 5px;
+  color: #FFFFFF;
+}
+
+article header#webColors{
+  background-color: #FF0000;
+}
+
+article header#RGBA{
+  background-color: #008000;
+}
+
+article header#\#HSLHSV{
+  background-color: #800080;
+}
+article p {
+  padding: 5px;
+  font-size: 0.8em;
+}
+article p:first-letter {
+  font-size: 2em;
+}
+article p:first-line {
+  font-style: italic;
+}
+
+article footer a{
+  font-size: 0.5em;
+  color: #746D6F;
+}

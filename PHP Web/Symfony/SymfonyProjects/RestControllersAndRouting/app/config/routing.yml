@@ -1,0 +1,3 @@
+app:
+    resource: '@SoftuniBundle/Controller/'
+    type: annotation

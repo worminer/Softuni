@@ -1,0 +1,4 @@
+services:
+#    img_shop_front_store.example:
+#        class: IMG\Shop\FrontStoreBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

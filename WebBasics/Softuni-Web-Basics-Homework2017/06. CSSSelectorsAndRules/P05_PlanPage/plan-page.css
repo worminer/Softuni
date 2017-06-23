@@ -1,0 +1,186 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v13/dPJ5r9gl3kK6ijoeP1IRsvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v13/EsvMC5un3kjyUhB9ZEPPwg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v13/R4a6fty3waPci7C44H8AjvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v13/tI4j516nok_GrVf4dhunkg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg,
+  rgba(253,149,192,1) 0%,
+  rgba(195,95,204,1) 38%,
+  rgba(175,104,241,1) 66%,
+  rgba(175,104,241,1) 84%,
+  rgba(168,125,255,1) 100%);
+
+}
+
+body main {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  background-color: #2D3154;
+}
+
+main div.plan-types {
+  text-align: center;
+}
+
+main div.plan-types ul li {
+  text-align: left;
+  margin: 20px;
+  display: inline-block;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+main div.plan-types ul li#basic-plan {
+  background: url("img/plan-background-basic.png") no-repeat #FFFFFF;
+  background-size: contain;
+}
+
+main div.plan-types ul li#pro-plan {
+  background: url("img/plan-background-pro.png") no-repeat #FFFFFF;
+  background-size: contain;
+}
+main div.plan-types ul li#med-plan {
+  background: url("img/plan-background-med.png") no-repeat #FFFFFF;
+  background-size: contain;
+}
+
+main div.plan-types ul li .title {
+  color: #FFFFFF;
+  padding-top: 20px;
+  font-size: 3em;
+}
+
+main div.plan-types ul li .price {
+  color: #2D3154;
+  padding-top: 30px;
+  padding-left: 45px;
+  font-size: 3em;
+}
+main div.plan-types ul li .price:first-letter {
+  font-size: 0.7em;
+}
+
+main div.plan-types ul li p.plan {
+
+  margin-top: -35px;
+  padding-left: 45px;
+  font-size: 1em;
+}
+
+main div.plan-types ul li button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 65px;
+  clear: both;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  font-weight: 900;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  background: linear-gradient(45deg,
+  rgba(253,149,192,1) 0%,
+  rgba(168,125,255,1) 100%);
+
+}
+
+main div.plan-types ul li button.chosen-plan {
+  background: linear-gradient(45deg,
+  rgba(168,125,255,1) 0%,
+  rgba(253,149,192,1) 100%);
+}
+
+main div.information {
+  padding-left: 100px;
+  width: 45%;
+  color: #FFFFFF;
+  padding-bottom: 50px;
+}
+
+main div.information h3.plan-title {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+main div.information p.plan-descirption {
+  font-size: 0.7em;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+main div.next-step {
+  padding-bottom: 20px;
+}
+
+main div.next-step button{
+  display: block;
+  margin: 0 auto;
+  width:  100px;
+  height: 40px;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(45deg,
+  rgba(226, 168, 126,1) 0%,
+  rgba(211, 85, 110,1) 100%);
+}

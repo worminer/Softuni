@@ -1,0 +1,56 @@
+<!-- Blog Login Form  -->
+<div class="col-md-8 col-md-offset-2">
+    <div class="login-panel panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">New Category</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" action="/categories/addPost">
+                <fieldset>
+
+                    <div class="form-group col-md-6"  >
+                        <input class="form-control" placeholder="Category Name" name="category_name" type="text" autofocus required>
+
+                    </div>
+                    <div class="form-group col-md-6"  >
+                        <input class="btn btn-primary btn-block" type="submit" value="Create new Category" name="category_create" >
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<div class="col-md-8 col-md-offset-2">
+    <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Database Id</th>
+            <th>Category name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each categories}}
+        <tr>
+            <td>{{#number}}</td>
+            <td>{{value["id"]}}</td>
+            <td>{{value["name"]}}</td>
+            <td>
+                <a class="btn btn-warning" href='/categories/edit/{{value["id"]}}'>Edit</a>
+                <a class="btn btn-danger" href="/categories/delete/{{value['id']}}">Delete</a>
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td colspan="4">There are no categories yet!</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<!-- End of  Blog Login Form  -->

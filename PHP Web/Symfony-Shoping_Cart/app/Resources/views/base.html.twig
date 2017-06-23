@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %} - {% block sub_title %}Shopping-Card{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    {% block stylesheets_main %}
+    <link rel="stylesheet" href="{{ asset('resources/css/bootstrap.cerulean.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/main.css') }}">
+    {% endblock %}
+    {% block stylesheets_addon %} <!-- use this block if you want to add custom styles-->{% endblock %}
+
+    {% block javascript_top_main %}
+        <script src="{{ asset('resources/js/jquery-3.1.1.min.js') }}"></script>
+        <script src="{{ asset('resources/js/bootstrap.min.js') }}" ></script>
+    {% endblock %}
+
+    {% block javascript_top_addon %}<!-- use this block if you want to add custom JS-->{% endblock %}
+</head>
+<body>
+
+<header>
+    {% block header %}
+        {% block nav_bar %}
+
+                <div class="container">
+                    <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">ShopCard</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="top-nav">
+                        <ul class="nav navbar-nav">
+                            {% if is_granted('ROLE_ADMIN','ROLE_SHOPMOD') %}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Administration <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ path('item_manage') }}">Manage Items</a></li>
+                                    <li><a href="{{ path('categories_manage') }}">Manage Categories</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            {% if app.user %}
+                                <li><a href="{{ path('cart_show_items') }}">Cart</a></li>
+                                <li><a href="{{ path('user_profile') }}">Profile</a></li>
+                                <li><a href="{{ path('user_logout') }}">Logout</a></li>
+                            {% else %}
+                                <li><a href="{{ path('user_register') }}">Register</a></li>
+                                <li><a href="{{ path('user_login') }}">Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    </nav>
+                </div>
+
+        {% endblock %}
+        <section class="row">
+            <div class="col-md-6 col-md-offset-3">
+                {% block messages_box %}
+                    {% if app.session.flashBag.has('success') %}
+                        <div class="alert alert-success">
+                            <ul>
+                                {% for message in app.session.flashBag.get('success') %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    {% if app.session.flashBag.has('error') %}
+                        <div class="alert alert-danger">
+                            <ul>
+                                {% for message in app.session.flashBag.get('error') %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </section>
+
+    {% endblock %}
+</header>
+
+
+<main class="container">
+    {% block main %}
+    <h1>site base template!</h1>
+    {% endblock %}
+</main>
+
+
+<footer>
+    {% block footer %}{% endblock %}
+    {% block javascript_end_block %}<!-- if you need to put js at the end of the file !! -->{% endblock %}
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+img_shop_front_store:
+    resource: "@IMGShopFrontStoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+test:
+    resource: "@TestBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

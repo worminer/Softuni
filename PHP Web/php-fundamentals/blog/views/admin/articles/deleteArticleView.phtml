@@ -1,0 +1,27 @@
+<!-- Blog Show  -->
+<div class="col-md-10 col-md-offset-1">
+    <div class="login-panel panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title ">Delete Post</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" action="/admin/deleteArticlePost/{#article_id}">
+                <fieldset>
+                    <div class="form-group"  >
+                        <input class="form-control" id="disabledInput"  name="title" type="text" value="{#title}" disabled="disabled">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="disabledInput" name="content" type="text" disabled="disabled">{#content}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <strong>In categories:</strong> <em>{#categories_string}</em>
+                    </div>
+                    <div class="col-md-4 pull-right">
+                        <input class="btn btn-lg btn-danger btn-block" type="submit" value="Delete post" name="deleteArticle" >
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End of  Blog Show  -->

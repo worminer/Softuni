@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}.
+    <section class="row">
+        <h1>Card edit</h1>
+
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        {{ form_end(edit_form) }}
+
+        <ul>
+            <li>
+                <a href="{{ path('cart_manage') }}">Back to the list</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-danger">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </section>
+{% endblock %}

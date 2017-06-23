@@ -1,0 +1,28 @@
+<header class="Header">
+    <h1 align="center">Comments for movie: {{movie.title}}</h1>
+</header>
+{{#each comments}}
+    <div class="col-lg-12 shadow-bottom-sm home-feed-md margin-top-sm" style="margin-bottom: 30px; text-align: center">
+            <h6>By: {{this.author.fullName}}</h6>
+
+            <h7 class="btn btn-default-md text-success" data-toggle="collapse" data-target="#{{this.id}}">
+                Click to see the comment text
+            </h7>
+            <div id="{{this.id}}" class="collapse">
+                <h5 data-toggle="collapse">
+                    {{this.content}}
+                </h5>
+            </div>
+            <h5>{{this.dateCreated}}</h5>
+    </div>
+{{/each}}
+<style>
+    .Header{
+        width:100%;
+        height:150px;
+        background-color:#9c3636;
+        text-align:center;
+        padding-top:35px;
+        margin-bottom: 30px;
+    }
+</style>

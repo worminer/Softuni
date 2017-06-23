@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06. Extract Parenthesis</title>
+</head>
+<body>
+<p id="content">
+    Lorem ipsum dolor sit amet, (consectetur adipisicing) elit. (Dicta esse) nihil sed vel voluptatem! Beatae (esse id) labore mollitia quaerat reiciendis voluptatem. Distinctio magni modi molestias officia sed ullam ut?
+</p>
+<script>
+    let text = extract('content');
+    console.log(text)
+    function extract(id) {
+      let content = document.getElementById(id).textContent;
+      let regex = /\(([^)]+)\)/g;
+      let matches = [];
+      let match = '';
+      while(match = regex.exec(content)){
+        matches.push(match[1]);
+      }
+      return matches.join('; ');
+    }
+
+</script>
+</body>
+</html>

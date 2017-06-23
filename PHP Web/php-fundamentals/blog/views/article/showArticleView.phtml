@@ -1,0 +1,39 @@
+<!-- Blog Login Form  -->
+<div class="col-md-10 col-md-offset-1">
+    {{#if result}}
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title text-capitalize">
+                {#result["title"]}
+                <span class=" pull-right">
+                    <b> Writen by:</b>  {#result["real_name"]}
+                </span>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel-body panel-collapse">
+                <div class="well text-capitalize">
+                    {#result["content"]}
+                </div>
+                <div class="well pull-right">
+                    <strong>Written at:</strong> {#result["created_at"]}
+                </div>
+                <div class="well text-capitalize">
+                    <strong>In categories:</strong>  <em>{#result["categories_string"]}</em>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+        </div>
+    </div>
+    <hr>
+
+    {{else}}
+        <div class="well">
+            Sorry, There are no Articles to show!
+        </div>
+    {{/if}}
+</div>
+<!-- End of  Blog Login Form  -->

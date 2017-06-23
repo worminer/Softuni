@@ -1,0 +1,42 @@
+<!-- Blog Show  -->
+<div class="col-md-12 ">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">My Articles </h3>
+        </div>
+        <div class="panel-body">
+            {{#if articles}}
+                {{#each articles}}
+                    <div class="panel-body panel-collapse">
+                        <div class="well">
+                            <span class="well ">
+                                <strong> Tile:</strong>  <span class="text-capitalize">{{value["title"]}}</span>
+                            </span>
+                            <span class="well pull-right">
+                                <strong> Writen by:</strong>  {{value["real_name"]}}
+                            </span>
+                            <div class="well text-capitalize article-content">
+                                {{value["content"]}}
+                            </div>
+                            <div class="well pull-right">
+                               <strong>Written at:</strong> {{value["created_at"]}}
+                            </div>
+
+                        </div>
+                        <div class="well text-capitalize">
+                            <strong>In categories:</strong>  <em>{{value["categories_string"]}}</em>
+                        </div>
+                        <div class="well pull-left">
+                            <a href="/article/edit/{{value["article_id"]}}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="/article/delete/{{value["article_id"]}}" class="btn btn-primary btn-sm">Delete</a>
+                        </div>
+                    </div>
+                {{/each}}
+            {{else}}
+             Sorry, you don't have any articles to show!
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<!-- End of  Blog Show  -->

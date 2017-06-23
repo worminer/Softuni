@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+body {
+  background-color: #FAFAFA;
+  font-size: 14px;
+}
+
+main form {
+  width: 70%;
+  margin: 50px auto;
+  height: 500px;
+  color: #565656;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 30px #42CACA;
+}
+
+main form div {
+  float: left;
+  background: linear-gradient(to bottom, #6afdc9 0%,#42c9ca 100%);
+  height: 500px;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+main form img {
+  height: 350px;
+}
+
+main form h1 {
+  font-family: Anton, sans-serif;
+  color: black;
+  padding-top: 35px;
+}
+
+main form h2 {
+  font-family: Anton, sans-serif;
+}
+
+main form label {
+  display: block;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+main form select,
+main form input {
+  box-sizing: border-box;
+  padding: 7px;
+  border: none;
+  width: 180px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  outline: none;
+}
+
+main form select {
+  background-color: #42CACA;
+  color: white;
+}
+
+main form input {
+  color: #42CACA;
+  border-bottom: 3px solid #42CACA;
+}
+
+main form input::-webkit-input-placeholder {
+  color: #42CACA;
+}
+
+main form button {
+  display: block;
+  padding: 7px 25px;
+  background: none;
+  margin-top: 30px;
+  text-transform: uppercase;
+  color: #42CACA;
+  border: 3px solid #42CACA;
+  border-radius: 17px;
+}
+
+main form button:hover {
+  background-color: #42CACA;
+  color: white;
+  cursor: pointer;
+}

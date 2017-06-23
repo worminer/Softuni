@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+body {
+  color: #1E1917;
+  background-color: #EEEEEE;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+/** Main Section Styles **/
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+main h1 {
+  font-size: 40px;
+  color: #324E5A;
+  font-weight: bold;
+  padding: 30px;
+  background-color: white;
+  border-top: 7px solid #324E5A;
+  border-right: 7px solid #324E5A;
+  margin-bottom: 40px;
+}
+
+main form label[for=deactivate] {
+  float: right;
+  margin-top: 20px;
+}
+
+main form label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 10px;
+}
+
+main form form {
+  padding-left: 30px;
+}
+
+main form input[type=text],
+main form input[type=password],
+main form input[type=email],
+main form input[type=tel] {
+  width: 75%;
+  box-sizing: border-box;
+  height: 30px;
+  border-top: 4px solid #324E5A;
+  border-left: 4px solid #324E5A;
+  margin-bottom: 10px;
+}
+
+main form label[for=broadband],
+main form label[for=radio] {
+  display: inline;
+}
+
+main form input[id=radio] {
+  margin-left: 25%;
+}
+
+main form input[id=broadband] {
+  margin-bottom: 15px;
+}
+
+main form .groups {
+  width: 75%;
+  border-top: 4px solid #324E5A;
+  border-left: 4px solid #324E5A;
+  background-color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+main form a {
+  color: #136F63;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+main form button {
+  width: 200px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  background: none;
+}
+
+main form button:first-of-type {
+  margin-left: 60px;
+  color: #FF5428;
+  border-bottom: 3px solid #FF5428;
+  border-right: 3px solid #FF5428;
+}
+
+main form button:first-of-type:hover {
+  background-color: #FF5428;
+  cursor: pointer;
+  color: white;
+}
+
+main form button:last-of-type {
+  margin-left: 30px;
+  color: #136F64;
+  border-bottom: 3px solid #136F64;
+  border-right: 3px solid #136F64;
+}
+
+main form button:last-of-type:hover {
+  background-color: #136F64;
+  cursor: pointer;
+  color: white;
+}

@@ -1,0 +1,42 @@
+<!-- Blog Login Form  -->
+<div class="col-md-10 col-md-offset-1">
+    {{#if allArticlesInCategory}}
+    {{#each allArticlesInCategory}}
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title text-capitalize">
+                {{value["title"]}}
+                <span class=" pull-right">
+                    <b> Writen by:</b>  {{value["real_name"]}}
+                </span>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel-body panel-collapse">
+                <div class="well">
+                    {{value["content"]}}
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <div class="well text-capitalize">
+                <strong>In categories:</strong>  <em>{{value["categories_string"]}}</em>
+            </div>
+            <span>
+                <a href="/article/articleId/{{value["article_id"]}}">Show more..</a>
+            </span>
+           <span class="pull-right">
+               <b>Written at:</b> {{value["created_at"]}}
+            </span>
+        </div>
+    </div>
+    <hr>
+    {{/each}}
+    {{else}}
+    <div class="well">
+        Sorry, There are no to show!
+    </div>
+    {{/if}}
+</div>
+<!-- End of  Blog Login Form  -->

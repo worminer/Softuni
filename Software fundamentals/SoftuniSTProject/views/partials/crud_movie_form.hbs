@@ -1,0 +1,158 @@
+<form class="form-horizontal" action="{{formURL}}{{movieData.id}}" method="post">
+    <fieldset>
+        <legend>{{formTitle}}  - {{ user.fullName }}</legend>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="title">Movie title:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="title" value="{{movieData.title}}" name="title" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="select" class="col-sm-4 control-label">Genres<br/>(if checked will be added to the movie)</label>
+            <div class="col-sm-4">
+                <select multiple="multiple" class="form-control" name="genres_ids" {{#if formDelete}} disabled{{/if}}>
+                    {{#each movieData.genres}}
+                        <option value="{{this.id}}" {{#if this.selected}} selected="selected"  {{/if}} > {{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="directors">Movie director:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="directors" value="{{movieData.directors}}" name="directors" required {{#if formDelete}} disabled{{/if}} >
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="writers">Movie writers:</label>
+            <div class="col-sm-4 ">
+                <input type="textarea" class="form-control" id="writers" value="{{movieData.writers}}" name="writers" required {{#if formDelete}} disabled{{/if}} >
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="actors">Movie actors:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="actors" value="{{movieData.actors}}" name="actors" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="plot" class="col-sm-4 control-label">Movie plot:</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" rows="5"  id="plot" name="plot" {{#if formDelete}} disabled{{/if}}>{{movieData.plot}}</textarea>
+                <span class="help-block"></span>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="youtube_trailers_str">Manually add youtube trailers: <br/>(only id's ,separated by comma)</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="youtube_trailers_str" value="{{movieData.youtube_trailers}}" name="youtube_trailers_str" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="languages">Movie languages:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="languages" value="{{movieData.languages}}" name="languages" required {{#if formDelete}} disabled{{/if}} >
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="countries">Movie country:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="countries" value="{{movieData.countries}}" name="countries" required {{#if formDelete}} disabled{{/if}} >
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="awards">Movie awards:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="awards" value="{{movieData.awards}}" name="awards" required {{#if formDelete}} disabled{{/if}} >
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="poster_url">Movie poster url:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="poster_url" value="{{movieData.poster_url}}" name="poster_url" required {{#if formDelete}} disabled{{/if}} >
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="metascore">Movie metascore:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="metascore" value="{{movieData.metascore}}" name="metascore" required {{#if formDelete}} disabled{{/if}} >
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="rating">Movie rating:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="rating" value="{{movieData.rating}}" name="rating" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="imdb_users_voted">User votes:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="imdb_users_voted" value="{{movieData.imdb_users_voted}}" name="imdb_users_voted" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="imdb_id">imdb id:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="imdb_id" value="{{movieData.imdb_id}}" name="imdb_id" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="imdb_url">imdb link:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="imdb_url" value="{{movieData.imdb_url}}" name="imdb_url" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="release_date">Release date:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="release_date" value="{{movieData.release_date}}" name="release_date" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="release_year">Release year:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="release_year" value="{{movieData.release_year}}" name="release_year" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="rated">Rated:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="rated" value="{{movieData.rated}}" name="rated" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="runtime">Runtime:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="runtime" value="{{movieData.runtime}}" name="runtime" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group"><label class="col-sm-4 control-label" for="media_type">Media type:</label>
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="media_type" value="{{movieData.media_type}}" name="media_type" required {{#if formDelete}} disabled{{/if}}>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tags_names" class="col-sm-4 control-label">Tags:</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" rows="2"  id="tags_names" name="tags_names" {{#if formDelete}} disabled{{/if}} >{{movieData.tagsArr}}</textarea>
+                <span class="help-block"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{#if formDelete}}
+                <div class="col-sm-4 col-sm-offset-4"><a href="/" class="btn btn-default">Cancel</a>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            {{else}}
+                <div class="col-sm-4 col-sm-offset-4"><a class="btn btn-default" href="#">Cancel</a>
+                    <button type="submit" class="btn btn-success">Save!</button>
+                </div>
+            {{/if}}
+        </div>
+    </fieldset>
+</form>

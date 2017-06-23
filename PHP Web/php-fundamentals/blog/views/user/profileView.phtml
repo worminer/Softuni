@@ -1,0 +1,48 @@
+<div class="row user-infos cyruxx">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">User information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-5 col-md-6 ">
+                        <img class="img-rounded img-responsive center-block profile-picture"
+                             src="{#userData["profile_pic"]}"
+                             alt="User Pic"
+                        >
+                        <form class="text-center" action="/user/changeProfilePicPost" method="post" enctype="multipart/form-data">
+                            <label class="btn btn-default btn-file">
+                                <input type="file" name="image" hidden>
+                                <input type="submit" name="change_profile_pic" value="Save New Image" >
+                            </label>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-7 col-md-6">
+                        <p>
+                        </p>
+                        <dl class="text-left">
+                            <dt>Username: </dt>
+                            <dd>{#userData["username"]}</dd>
+                            <dt>User roles: </dt>
+                            <dd class="text-capitalize">
+                                {{#each userRoles}}
+                                    {{value}}
+                                {{else}}
+                                     <strong>There are no user roles set for this user!</strong>
+                                {{/each}}
+                            </dd>
+                            <dt>Real Name: </dt>
+                            <dd>{#userData["real_name"]}</dd>
+                            <dt>Email</dt>
+                            <dd>{#userData["email"]}</dd>
+                            <dt>Registered since: </dt>
+                            <dd>{#userData["creation_date"]}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

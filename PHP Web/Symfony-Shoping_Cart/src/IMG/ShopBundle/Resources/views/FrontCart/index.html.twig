@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="row">
+        <div class="col-md-3">
+            {{ include('IMGShopBundle:Partial:SideMenu.html.twig') }}
+        </div>
+        <div class="col-md-9">
+            <h1>Shopping Cart</h1>
+            {% if cart.items.values|length == 0 %}
+                <div class="well" >
+                        <h2>Your Shopping card is empty.. Start shopping form <a href="{{ path('shop_index') }}">HERE</a></h2>
+                </div>
+            {% endif %}
+            {% for carditem in cart.items.values %}
+
+                <div class="product-container well" >
+
+                    <div class="col-md-3 product-image-container">
+                        <a href="{{ path('shop_view_item', {'id': carditem.item.id}) }}">
+                            {% if carditem.item.frontImage %}
+                                <img src="/resources/images/shop/items/{{carditem.item.frontImage}}"
+                                     class="img-responsive item-group-image"
+                                     alt="item image"
+                                >
+                            {% else %}
+                                <img src="{{ asset('resources/images/no-image.svg') }}"
+                                     class="img-responsive item-group-image"
+                                     alt="item image"
+
+                                >
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="col-md-9">
+                        <div>
+                            <a href="{{ path('shop_view_item', {'id': carditem.item.id}) }}">
+                                <h4>{{ carditem.item.name }}</h4>
+                            </a>
+                        </div>
+                        <div class="">
+                            <div class="product-item-price">
+                                Price for one: {{ carditem.item.price }} BGN.
+                            </div>
+                            <div class="">
+                                {{ form_start(formArray[carditem.id], {'action': path('cart_item_quantity_change'), 'method': 'POST'}) }}
+                                {{ form_row(formArray[carditem.id].card_item_id, {'attr': {'value':carditem.id}}) }}
+                                <div class="col-md-4 product-item-price">
+                                    Ordered products:
+                                </div>
+                                <div class="col-md-4">
+                                    {{ form_row(formArray[carditem.id].quantity,{'label': ' ','attr': {
+                                        'value': carditem.quantity
+                                    }}) }}
+                                </div>
+                                <div class="col-md-4">
+                                    {{ form_row(formArray[carditem.id].set_quantity) }}
+                                </div>
+                                {{ form_end(formArray[carditem.id]) }}
+                            </div>
+                            <div class="product-item-price">
+                                Price For All: {{ carditem.item.price * carditem.quantity}} BGN.
+                            </div>
+                            <div class="text-right">
+                                <a href="{{ path('cart_remove_item',{'id': carditem.id}) }}" class="btn btn-danger btn-sm"> Remove From Card!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="text-right">
+                {{ form(purchaseForm, {'action': path('cart_order_action', {'method': 'POST'})}) }}
+                {{ form_widget(purchaseForm) }}
+                {{ form_end(purchaseForm) }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

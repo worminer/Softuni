@@ -1,0 +1,40 @@
+<!-- sidebar -->
+<aside class="sidebar">
+    <!-- Side menu Bootstrap -->
+    <div class="widget">
+        <div class="nav-side-menu">
+            <div class="navbar navbar-default widgettitle-container" data-toggle="collapse" data-target="#menu-content">
+                <h3 class="widgettitle display-inline">Categories</h3>
+                <div class="navbar-header display-inline pull-right">
+                    <!-- this makes the small buttons for mobile -->
+
+                    <button type="button" class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="menu-list">
+                <ul id="menu-content" class="menu-content collapse out">
+                    {{#each categories}}
+                        {{#if ../site.config.genreMenu.hideEmptyGenres }}
+                            {{#compare this.movies.length 0 operator=">"}}
+                                <li>
+                                    <a href="/genre/{{ this.id }}" class="hoverbuble">{{ this.name }}  <span>{{ this.movies.length }}</span></a>
+                                </li>
+                            {{/compare}}
+                        {{else}}
+                            <li>
+                                <a href="/genre/{{ this.id }}" class="hoverbuble">{{ this.name }}  <span>{{ this.movies.length }}</span></a>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Side menu Bootstrap -->
+</aside>
+<!-- end of sidebar -->

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="row">
+        <h1>Categories list</h1>
+        <div class="well">
+            <a href="{{ path('categories_new') }}" class="btn btn-success">Create a new category</a>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Front Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <td><a href="{{ path('categories_show', { 'id': category.id }) }}">{{ category.id }}</a></td>
+                        <td>
+                            {% if category.frontImage %}
+                                <img src="/resources/images/shop/categories/{{category.frontImage}}" style="height: 50px;" alt="category image">
+                            {% else %}
+                                <img src="{{ asset('resources/images/no-image.svg') }}" style="height: 50px;" alt="category image">
+                            {% endif %}
+
+                        </td>
+                        <td>{{ category.name }}</td>
+                        <td>{{ category.description }}</td>
+                        <td>
+                            <a href="{{ path('categories_show', { 'id': category.id }) }}" class="btn btn-info btn-xs">Show&nbsp;</a>
+                            <a href="{{ path('categories_edit', { 'id': category.id }) }}" class="btn btn-success btn-xs">&nbsp;&nbsp;Edit&nbsp;&nbsp;</a>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </section>
+
+{% endblock %}

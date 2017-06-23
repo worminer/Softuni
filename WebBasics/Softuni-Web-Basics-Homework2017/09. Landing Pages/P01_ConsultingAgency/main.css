@@ -1,0 +1,309 @@
+@import url('https://necolas.github.io/normalize.css/5.0.0/normalize.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+html {
+  font-size: 17px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+header, main, footer {
+  font-size: 1rem;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+/* Header
+   ========================================================================== */
+body > header {
+  border-bottom: 1px solid #b6b4b5;
+  background:
+          linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+          url("images/Layer-759_02.jpg") center / cover;
+  text-align: center;
+  font-weight: bold;
+}
+.nav-primary {
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 1100px;
+  font-size: 0.9em;
+}
+.nav-primary ul {
+  background: rgba(186, 146, 94, 0.9);
+}
+.nav-item {
+  display: inline-block;
+}
+.nav-item a {
+  display: block;
+  padding: 1.3em 2em;
+  color: #fff;
+}
+.nav-item.home a {
+  color: #f2debb;
+}
+.nav-item a:hover {
+  text-decoration: underline;
+}
+.consulting-rev {
+  padding-bottom: 10em;
+  color: #ffffff;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.consulting-rev h1 {
+  text-transform: uppercase;
+  font-size: 3.3em;
+}
+.consulting-rev p {
+  margin: 0 auto;
+  max-width: 18em;
+  font-size: 1.4em;
+}
+.consulting-rev a {
+  display: inline-block;
+  margin: 2em;
+  padding: 1.3em 1.3em 1.1em 1.3em;
+  border-radius: 0.5em;
+  background: #080820;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+.consulting-rev a i {
+  color: #c29b7a;
+  font-size: 1.15em;
+}
+.consulting-rev a:hover,
+.consulting-rev a:hover i {
+  background: #c79d63;
+  color: #080820;
+}
+/* Main
+   ========================================================================== */
+main {
+  margin: 0 auto;
+  text-align: center;
+}
+main > section {
+  /*max-width: 1400px;*/
+}
+main > header > h2 {
+  font-size: 3em;
+}
+.travel-business-customer,
+.financial-energy-surface {
+  display: inline-block;
+  max-width: 450px;
+  vertical-align: top;
+  text-align: left;
+}
+.icon {
+  position: relative;
+  top: 0.5em;
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+}
+.icon i {
+  margin-top: 0.5em;
+}
+.travel-business-customer article,
+.financial-energy-surface article {
+  float: right;
+  margin: 1em;
+  max-width: 350px;
+}
+.travel-business-customer h2,
+.financial-energy-surface h2 {
+  font-size: 1em;
+}
+.banner {
+  position: relative;
+  width: 100%;
+}
+.banner::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: url(images/steel-bg.jpg) center center;
+  background-size: cover;
+  content: "";
+  opacity: 0.3;
+}
+.banner h5 {
+  box-sizing: border-box;
+  margin-bottom: 0;
+  padding: 2em;
+  width: 100%;
+  font-size: 1.3em;
+}
+.banner span {
+  display: block;
+  color: #c79d63;
+}
+.traders {
+  background:
+          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("images/background-choose-us.jpg") center / cover;
+  color: #fff;
+}
+.traders h2 {
+  margin-top: 0;
+  padding: 1.5em 0 0.2em 0;
+  font-size: 2.5em;
+}
+.article-container a {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 1em 2em 1em;
+  padding: 1em;
+  width: 344px;
+  height: 177px;
+  border: 2px solid #b8a07c;
+  color: inherit;
+  vertical-align: top;
+}
+.article-container p {
+  font-size: 0.8em;
+  line-height: 1.35em;
+}
+.article-container a:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+.consulting-woman {
+  position: relative;
+  padding-top: 1em;
+  height: 400px;
+  background: url("images/consulting-woman.jpg") top center / cover;
+}
+.testimonial-info {
+  position: absolute;
+  right: 2em;
+  bottom: 0;
+  padding: 2em;
+  max-width: 380px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.testimonial-info p {
+  font-size: 0.8em;
+}
+.testimonial-info > p::before,
+.testimonial-info > p::after {
+  display: inline;
+  color: #b49f82;
+  content: '"';
+  font-size: 2em;
+}
+.testimonial-info div {
+  padding: 0.3em 1em;
+  background: #080820;
+  color: #fff;
+}
+.testimonial-info p {
+  color: #777580;
+  text-align: right;
+}
+.testimonial-info h4 {
+  margin-bottom: 7em;
+  text-align: left;
+}
+.partners li {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Footer
+   ========================================================================== */
+footer {
+  background: #080820;
+  color: #fff;
+  text-align: center;
+}
+footer h2 {
+  font-size: 1.3em;
+}
+footer h2,
+footer ul {
+  text-align: left;
+}
+footer > div {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 2em 3em;
+  vertical-align: top;
+}
+.socials li {
+  display: inline-block;
+  margin: 0.5em;
+}
+footer h2,
+footer ul {
+  text-align: left;
+}
+.info-socials-container {
+  width: 300px;
+}
+.info-socials-container > ul {
+  padding: 0 1em 0 1.5em;
+}
+.info > li {
+  margin: 1em 0;
+}
+.socials a {
+  margin-left: 0.7em;
+  line-height:30px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #84848e;
+  color: #080820;
+  text-align: center;
+  border-radius: 50%;
+}
+.extra-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 148px;
+  width: 250px;
+  padding-left: 1em;
+}
+.extra-links li {
+  font-size: 0.9em;
+  margin: 0.1em 0.1em;
+}
+.instagram-widget {
+  width: 380px;
+}
+.instagram-widget ul {
+  padding-left: 2em;
+}
+.instagram-widget li {
+  display: inline-block;
+  float: left;
+}
+.instagram-widget img {
+  width: 90px;
+  height: 90px;
+}
+
+
+

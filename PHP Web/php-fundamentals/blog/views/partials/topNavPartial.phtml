@@ -1,0 +1,93 @@
+<div class="col-md-12">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#" title="blog">
+                 <img style="width:50px; "
+                      src="/resources/images/logo.jpg">-->
+         </div>
+         <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/home/index">Home</a>
+                </li>
+                <li>
+                    <a href="/article/AllArticles">Show All Articles</a> <!-- Show aways because everyone can see all articles -->
+                </li>
+                <li>
+                    <a href="/contact/show">About Us</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav pull-right">
+
+                {{#if @isAdmin}}
+                    <li class="dropdown"> <!-- Show only when logged in as Admin -->
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Panel
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/showUsers">Manage Users</a></li>
+                            <li><a href="/admin/showArticles">Manage Articles</a></li>
+                            <li><a href="/categories/manage">Manage Category</a></li>
+                        </ul>
+                    </li>
+                {{/if}}
+                {{#if @isUser}}
+                <li class="dropdown"> <!-- Show only when logged in as Admin -->
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/article/create">Create new Article</a> <!-- Show only when logged in as Editor -->
+                        </li>
+                        <li>
+                            <a href="/article/myArticles">My Articles</a> <!-- Show only when logged in as Editor -->
+                        </li>
+                    </ul>
+                </li>
+                {{/if}}
+                {{#if @isLogged}}
+
+                    <li>
+                        <a href="/user/profile">
+                            <i class="fa fa-user-circle"> </i>
+                            Profile
+                        </a>
+                    </li>
+                    <li> <a href="/user/logout">
+                            <i class="glyphicon glyphicon-log-out"> </i> <!-- Show only when logged in-->
+                            Logout
+                        </a>
+                    </li>
+
+                {{else}}
+                    <li>
+                        <a href="/user/login">
+                            <i class="glyphicon glyphicon-log-in"> </i>
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/register">
+                            <i class="glyphicon glyphicon-user"> </i>
+                            Register
+                        </a>
+                    </li>
+                {{/if}}
+
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- /.container -->
+    </nav>
+</div>

@@ -1,0 +1,217 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/** Main container Styles**/
+body main {
+
+  background-image: linear-gradient(
+          rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1)
+          ), url("images/background.jpg");
+  background-size: cover;
+
+}
+
+body main .main-container {
+  padding: 40px 20px;
+  width: 750px;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* main container header */
+body main header nav {
+  width: 100%;
+}
+
+body main header nav ul {
+  text-align: left;
+}
+
+body main header nav ul li {
+  display: inline-block;
+
+}
+
+body main header nav ul li a {
+  padding: 15px 10px 15px 47px;
+  font-weight: 600;
+  color: #246CA7;
+  border-radius: 10px;
+  text-decoration: none;
+  background-repeat: no-repeat;
+}
+
+body main header li a#paragliding {
+  background-image: url("images/paraglider-icon.png");
+}
+
+body main header li a#skydiving {
+  background-image: url("images/sky-diver.png");
+}
+
+body main header li a#climbing {
+  background-image: url("images/climbing.png");
+}
+
+body main header li a#about-us {
+  background-image: url("images/about-us.png");
+}
+
+body main header li a:hover,
+body main header li .active
+{
+  background-color: #76ACD0;
+}
+/* End of main container header */
+
+/* Main container Forms */
+body main .form-container {
+  text-align: center;
+}
+
+body main form fieldset {
+  width: 300px;
+  height: 340px;
+  border: 3px solid #246CA7;
+  border-radius: 15px;
+  display: inline-block;
+  vertical-align: top;
+  color: #246CA7;
+}
+
+body main form fieldset div {
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+
+body main form fieldset div.top {
+  margin-top: 50px;
+}
+body main form fieldset legend {
+  margin-left: 120px;
+  color: #246CA7;
+}
+body main form fieldset input,
+body main form fieldset select {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid #246CA7;
+  border-radius: 20px;
+  font-size: 18px;
+  margin: 5px;
+  width: 90%;
+  padding: 5px;
+}
+body main form fieldset#left {
+  color: #246CA7;
+}
+
+/* what a mess .. there is no universal placeholder */
+body main form fieldset#left input::-moz-placeholder {
+  color: #7697B6;
+  text-align: center;
+}
+
+body main form fieldset#left input::-webkit-input-placeholder {
+  color: #7697B6;
+  text-align: center;
+}
+
+body main form fieldset#left button {
+  margin-right: -55px;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 7px;
+}
+
+body main form input#user {
+  background: url('images/user1.png') no-repeat scroll 7px 7px rgba(255, 255, 255, 0.4);
+  padding-left:30px;
+}
+body main form input#email  {
+  background: url('images/email.png') no-repeat scroll 7px 7px rgba(255, 255, 255, 0.4);
+  padding-left:30px;
+}
+body main form input#phone {
+  background: url('images/phone.png') no-repeat scroll 7px 7px rgba(255, 255, 255, 0.4);
+  padding-left:30px;
+}
+
+
+body main form fieldset#right div span {
+  display: block;
+  text-align: center;
+}
+
+body main form fieldset#right div ul {
+  margin: 0;
+  list-style-type: none;
+  display: inline-block;
+}
+body main form fieldset#right div ul li {
+  display: inline-block;
+  text-align: center;
+
+}
+body main form fieldset#right li input {
+
+  width: 20px;
+}
+
+body main form fieldset#right input {
+  text-align: center;
+  color: #246CA7;
+}
+
+body main form fieldset#right input::-moz-placeholder {
+  color: #246CA7;
+  text-align: center;
+}
+body main form fieldset#right select {
+  padding: 10px;
+  color: #246CA7;
+}
+
+body main form div.bottom_buttons {
+  margin-top: 10px;
+  text-align: right;
+  margin-right: 40px;
+}
+
+body main form div.bottom_buttons button {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 24px;
+  border: 1px solid;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+body main form div.bottom_buttons button[type="reset"] {
+   color: #B40000;
+   border-color: #B40000;
+ }
+body main form div.bottom_buttons button[type="submit"] {
+  color: #00B200;
+  border-color: #00B200;
+}
+
+body main form div.bottom_buttons button[type="reset"]:hover,
+body main form div.bottom_buttons button[type="submit"]:hover {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+body main form div.bottom_buttons button[type="reset"]:hover{
+  background-color: #B40000;
+}
+body main form div.bottom_buttons button[type="submit"]:hover{
+  background-color: #00B200;
+}
+
+/* End of Main container Forms */

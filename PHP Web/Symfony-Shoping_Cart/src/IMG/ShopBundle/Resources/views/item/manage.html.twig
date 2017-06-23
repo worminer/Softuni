@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="row">
+        <h1>List of all items in the shop</h1>
+
+        <div class="well">
+            <h3><a href="{{ path('item_new') }}" class="btn btn-success">Add a new item</a></h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Created at</th>
+                    <th>Expires at</th>
+                    <th>Expireble</th>
+                    <th>Is deleted</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td><a href="{{ path('item_show', { 'id': item.id }) }}">{{ item.id }}</a></td>
+                        <td>
+                            {% if item.frontImage %}
+                                <img src="/resources/images/shop/items/{{item.frontImage}}" style="height: 50px;" alt="product image">
+                            {% else %}
+                                <img src="{{ asset('resources/images/no-image.svg') }}" style="height: 50px;" alt="category image">
+                            {% endif %}
+
+                        </td>
+
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{% if item.createdAt %}{{ item.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{% if item.expiresAt %}{{ item.expiresAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{% if item.expireble %}Yes{% else %}No{% endif %}</td>
+                        <td>{% if item.isDeleted %}Yes{% else %}No{% endif %}</td>
+                        <td>
+                            <a href="{{ path('item_show', { 'id': item.id }) }}"  class="btn btn-info btn-xs" >Show&nbsp;</a>
+                            <a href="{{ path('item_edit', { 'id': item.id }) }}"  class="btn btn-success btn-xs" >&nbsp;&nbsp;Edit&nbsp;&nbsp;</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+
+
+{% endblock %}

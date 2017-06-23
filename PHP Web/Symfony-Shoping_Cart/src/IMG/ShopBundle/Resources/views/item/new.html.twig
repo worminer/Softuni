@@ -1,0 +1,33 @@
+{% form_theme item_form 'IMGShopBundle:Form:bootstrap_3_layout.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block javascript_top_addon %}
+    <script src="{{ asset('/resources/ckeditor/ckeditor.js') }}"></script>
+    <script>
+      $( 'textarea.editor' ).ckeditor();
+    </script>
+{% endblock %}
+
+{% block main %}
+    <section class="row">
+        <div class="col-md-12 well">
+            {{  form_start(item_form) }}
+            <fieldset>
+                <legend class="text-capitalize">Add new item.</legend>
+                <div class="col-md-9">
+                    <div class="col-md-6">
+                        {{ form_row(item_form.name) }}
+                    </div>
+                    <div class="col-md-12">
+                        {{ form_row(item_form.description) }}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    {{ form_widget(item_form) }}
+                </div>
+            </fieldset>
+            {{ form_end(item_form) }}
+        </div>
+        <a href="{{ path('item_manage') }}" class="text-capitalize">Back to the list</a>
+    </section>
+{% endblock %}

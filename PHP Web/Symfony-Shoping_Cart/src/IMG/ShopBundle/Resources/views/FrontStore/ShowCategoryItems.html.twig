@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="row">
+        <div class="col-md-3">
+            {{ include('IMGShopBundle:Partial:SideMenu.html.twig') }}
+        </div>
+        <div class="col-md-9">
+            {% for item in current_category.items %}
+            <div class="product-container well" >
+
+                <div class="col-md-3 product-image-container">
+                    <a href="{{ path('shop_view_item', {'id': item.id}) }}">
+                        {% if item.frontImage %}
+                            <img src="/resources/images/shop/items/{{item.frontImage}}"
+                                 class="img-responsive item-group-image"
+                                 alt="item image"
+                            >
+                        {% else %}
+                            <img src="{{ asset('resources/images/no-image.svg') }}"
+                                 class="img-responsive item-group-image"
+                                 alt="item image"
+
+                            >
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="col-md-9">
+                    <a href="{{ path('shop_view_item', {'id': item.id}) }}">
+                        <h4>{{ item.name }}</h4>
+                    </a>
+                    <div class="col-md-6">
+                        <div class="product-item-price">
+                            Price: {{ item.price }} BGN.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+

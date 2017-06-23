@@ -1,0 +1,35 @@
+<div class="col-md-8 col-lg-offset-2">
+    {{#if @messagesSuccess}}
+        <div class="alert alert-success">
+            {{#each @messagesSuccess}}
+                <p >
+                    <b>{{value}}</b>
+                </p>
+            {{/each}}
+        </div>
+    {{/if}}
+
+
+
+    {{#if @messagesWarning}}
+        <div class="alert alert-warning">
+            {{#each @messagesWarning}}
+                <p >
+                    <b>{{value}}</b>
+                </p>
+            {{/each}}
+        </div>
+    {{/if}}
+
+
+    {{#if @messagesError}}
+        <div class="alert alert-danger">
+                {{#each @messagesError}}
+                    <p class="button ">
+                        <b>{{value}}</b>
+                    </p>
+                {{/each}}
+        </div>
+    {{/if}}
+
+</div>

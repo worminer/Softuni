@@ -1,0 +1,16 @@
+form  {
+  width:300px;
+  color: #2d2d2d;
+
+}
+form fieldset {
+  padding: 10px;
+  text-align: left;
+}
+
+form input,
+form textarea,
+form select{
+  width: 90%;
+  box-sizing: border-box;
+}

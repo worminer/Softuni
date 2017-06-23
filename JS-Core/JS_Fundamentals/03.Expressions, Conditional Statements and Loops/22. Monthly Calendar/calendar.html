@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Calendar</title>
+    <link rel="stylesheet" type="text/css" href="calendar.css">
+    <script src="monthlyCalendar.js"></script>
+</head>
+
+<body>
+Day: <input id="day" type="number" value="4" />
+Month: <input id="month" type="number" value="9" />
+Year: <input id="year" type="number" value="2016" />
+<input type="button" value="Show"
+       onclick="let calendarHTML =
+                    calendar([document.getElementById('day').value,
+                        document.getElementById('month').value,
+                        document.getElementById('year').value]);
+                    document.getElementById('calendar').innerHTML = calendarHTML;
+                    document.getElementById('calendarCode').innerText = calendarHTML" />
+<div class="title">Calendar:</div>
+<div id="calendar">Calendar will be shown here</div>
+<div class="title">HTML:</div>
+<textarea rows="12" id="calendarCode"></textarea>
+</body>
+</html>

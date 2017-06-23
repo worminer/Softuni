@@ -1,0 +1,67 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="login-panel panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">Delete User</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" action="/admin/deleteUserPost/{#userData['id']}">
+                <fieldset>
+                    <div class="row user-infos cyruxx">
+                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">User information</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 ">
+                                            <img class="img-rounded img-responsive center-block profile-picture"
+                                                 src="{#userData['profile_pic']}"
+                                            alt="User Pic"
+                                            >
+                                        </div>
+                                        <div class="col-xs-10 col-sm-10 hidden-md hidden-lg">
+                                            <strong>{#userData["username"]}</strong><br>
+                                            <dl>
+                                                <dt>User role:</dt>        <dd>{#userData["role_name"]}</dd>
+                                                <dt>Real Name</dt>         <dd>{#userData["real_name"]}</dd>
+                                                <dt>Email</dt>         <dd>{#userData["email"]}</dd>
+                                                <dt>Registered since:</dt> <dd>{#userData["creation_date"]}</dd>
+                                            </dl>
+                                        </div>
+                                        <div class=" col-md-9 col-lg-9 hidden-xs hidden-sm">
+                                            <strong>{#userData["username"]}</strong><br>
+                                            <table class="table table-user-information">
+                                                <tbody>
+                                                <tr>
+                                                    <td>User roles:</td>
+                                                    <td>{#userData["userRoles"]}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Real Name</td>
+                                                    <td>{#userData["real_name"]}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>{#userData["email"]}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Registered since:</td>
+                                                    <td>{#userData["creation_date"]}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input class="btn btn-lg btn-danger btn-block" type="submit" value="Delete User" name="deleteUser">
+                </fieldset>
+            </form>
+
+        </div>
+
+    </div>

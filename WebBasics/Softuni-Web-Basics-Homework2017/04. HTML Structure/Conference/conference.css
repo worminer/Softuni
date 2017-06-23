@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding:0;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/dPJ5r9gl3kK6ijoeP1IRsvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/EsvMC5un3kjyUhB9ZEPPwg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v11/R4a6fty3waPci7C44H8AjvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v11/tI4j516nok_GrVf4dhunkg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  Font-family: "Lato", sans-serif;
+  color: #FFFFFF;
+  margin: 10px;
+}
+body>header {
+  background-color: #293F50;
+  height: auto;
+
+}
+
+body>header nav {
+  line-height: 50px;
+}
+body>header nav ul li{
+  display: block;
+  float: left;
+}
+
+body>header nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 20px;
+  color: #3C6271;
+}
+
+body>header .container{
+  display: block;
+  text-align: center;
+}
+
+body>header h1 {
+  color: #6B7B8C;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: 20px;
+  padding-top: 50px;
+}
+
+body>header h2 {
+  color: #4D7F7C;
+  font-weight: 100;
+  line-height: 50px;
+}
+
+body>header p {
+  color: #A0AAB2;
+  font-weight: 100;
+  line-height: 30px;
+}
+
+body>header .btn {
+  background: none;
+  border: 1px solid #ADB6BC;
+  border-radius: 5px;
+  color: #C8DDF9;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 20px 15px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+body>header .btn:hover {
+  background-color: #FFFFFF;
+  color: #939C94;
+}
+
+.date {
+  display: block;
+  float: right;
+  padding-right: 20px;
+
+}
+
+.date p {
+  color: #57796E;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+main {
+  border: 5px solid #D9D9D9;
+  margin: 10px 0;
+  padding: 20px;
+  color: #B8C8D9;
+}
+
+main test {
+  margin: 0 auto;
+  display: block;
+  width: 1000px;
+}
+
+main section {
+  width: 30%;
+  display: inline-block;
+  margin: 0 1.4% ;
+}
+
+main section header {
+  color: #A5B9B9;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+main section img {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+main section h2 {
+  color: #A5B9B9;
+  text-transform: capitalize;
+  padding: 10px 0;
+}
+main section p {
+  color: #A5B9B9;
+  margin-bottom: 30px;
+}
+
+footer {
+  background-color: #293F50;
+  line-height: 50px;
+  padding: 30px 0;
+}
+
+footer .copyright {
+  padding-left:50px;
+  font-weight: 100;
+  font-size: 24px;
+  display: block;
+  float: left;
+}
+footer nav {
+  display: block;
+  float: right;
+  padding-right: 20px;
+}
+
+footer nav ul li{
+  display: block;
+  float: right;
+
+}
+
+footer nav ul li a {
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 200;
+  padding: 20px;
+  color: #A7B6C4;
+}
+.clear {
+  clear: both;
+}

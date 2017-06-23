@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="row">
+        <h1>Cards list</h1>
+
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Createdat</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for cart in carts %}
+                <tr>
+                    <td><a href="{{ path('cart_show', { 'id': cart.id }) }}">{{ cart.id }}</a></td>
+                    <td>{% if cart.createdAt %}{{ cart.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('cart_show', { 'id': cart.id }) }}" class="btn btn-info btn-xs" >show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('cart_edit', { 'id': cart.id }) }}" class="btn btn-success btn-xs" >edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('cart_new') }}">Create a new cart</a>
+            </li>
+        </ul>
+    </section>
+{% endblock %}

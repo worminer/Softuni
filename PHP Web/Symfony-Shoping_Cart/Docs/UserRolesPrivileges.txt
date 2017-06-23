@@ -1,0 +1,23 @@
+Anonymous:
+- can view the products
+
+User - ROLE_USER
+- can view products
+- leave comments on products
+
+User Admin - ROLE_USERADMIN
+- can manage users 
+- can ban users
+
+Shop Moderator - ROLE_SHOPMOD
+- can manage products
+- can manage categories
+- can order items that are out of stock
+- can approve user orders
+
+Shop Worker - ROLE_SHOPWORKER
+- can mark orders as shipped
+
+Site Admin 	- ROLE_ADMIN
+- probably will do all the other stuff
+- ban users/IP's

@@ -1,0 +1,30 @@
+<div class="container body-content">
+    <div class="well"><h2>All Users</h2>
+        <div class="row">
+            <table class="table table-striped table-hover table-seperators">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Movie Title</th>
+                    <th>Genres</th>
+                    <th>Tags</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody> {{#each movies}}
+                    <tr>
+                        <td>{{ this.id }}</td>
+                        <td>{{ this.title }}</td>
+                        <td>{{ this.genresArr }}</td>
+                        <td>{{ this.tagsArr }}</td>
+                        <td>
+                            <div class="btn-group">
+                            <a href="/admin/movie/edit/{{this.id}}" class="btn btn-default btn-xs">Edit</a>&nbsp;
+                            <a href="/admin/movie/delete/{{this.id}}" class="btn btn-default btn-xs" >Delete</a>
+                            </div>
+                        </td>
+                    </tr> {{/each}} </tbody>
+            </table>
+        </div>
+    </div>
+</div>

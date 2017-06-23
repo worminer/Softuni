@@ -1,0 +1,46 @@
+body{
+  padding: 20px;
+
+}
+
+h1 {
+  color: lightslategray;
+}
+
+img{
+  max-width: 33%;
+}
+
+header {
+  text-align: center;
+}
+
+header nav {
+  display: inline-block;
+}
+
+header ul{
+  padding: 0 10px;
+}
+
+header li{
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 1.3rem;
+}
+header li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 0 5px;
+}
+
+.smallText{
+  font-size: 0.75rem;
+}
+main {
+  text-align: center;
+}
+
+main .inline-block {
+  display: inline-block;
+}

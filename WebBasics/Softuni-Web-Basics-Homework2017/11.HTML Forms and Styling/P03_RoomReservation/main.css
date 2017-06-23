@@ -1,0 +1,131 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  background-color: #EBEBEB;
+  font: 13px Tahoma, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/** Main section styles **/
+body main form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+body main h1 {
+  font-size: 28px;
+  color: #73A7DA;
+  font-weight: normal;
+  background-color: #F1F1F1;
+  margin: 0;
+  padding: 15px 10px;
+  border-bottom: 1px dashed #DDDDDD;
+}
+
+body main h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+body main .info p{
+  width: 80%;
+  display: inline-block;
+  margin-right: 30px;
+  float: left;
+}
+
+body main input,
+body main select {
+  box-sizing: border-box;
+  height: 25px;
+  padding: 0 5px;
+  margin: 5px 0;
+  border-radius: 3px;
+  border: 1px solid #DDDDDD;
+}
+
+body main label[for=search] {
+  width: 130px;
+  float: left;
+  vertical-align: bottom;
+  font-weight: bold;
+  position: relative;
+}
+
+body main label[for=search] input {
+  width: 100%;
+  padding-right: 20px;
+}
+
+body main i {
+  position: absolute;
+  right: 5px;
+  bottom: 11px;
+}
+
+body main .info::after {
+  clear: left;
+  display: block;
+  content: '';
+}
+
+body main .info {
+  border-bottom: 1px dashed #DDDDDD;
+}
+
+body main .details, .reservation {
+  width: 49.5%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+body main .details input {
+  display: block;
+}
+
+body main .reservation label {
+  display: inline-block;
+}
+
+body main .reservation input,
+body main .reservation select {
+  height: 22px;
+}
+
+body main .reservation label[for=room] {
+  width: 60%;
+}
+
+body main .reservation label input,
+body main .reservation label select{
+  width: 100%;
+}
+
+body main .reservation label[for=number] {
+  width: 38%;
+}
+
+body main .reservation label[for=check-in],
+body main .reservation label[for=check-out] {
+  width: 49%;
+}
+
+body main .form {
+  border-bottom: 1px dashed #DDDDDD;
+}
+
+body main button {
+  float: right;
+  margin-top: 20px;
+  background-color: #32A2E4;
+  border-radius: 5px;
+  padding: 6px 25px;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+body main button:hover {
+  background-color: #3BBC96;
+  cursor: pointer;
+}

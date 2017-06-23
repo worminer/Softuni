@@ -1,0 +1,3 @@
+UserBundle
+- UserEntity и Securety controller - поема цялата логика за auth, register, login на юзър
+- RoleEntity се занимава с логиката по ролите

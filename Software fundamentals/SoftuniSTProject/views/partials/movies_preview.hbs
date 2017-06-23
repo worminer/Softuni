@@ -1,0 +1,139 @@
+{{#each movies}}
+    <!-- Movie preview -->
+    <div class="post">
+        <!-- post-inner -->
+        <article>
+            <div class="post-inner">
+                <header>
+                    <h2><a href="#">{{ this.title }}</a></h2>
+                    <p class="tags">{{#each this.tags}}<a href="/tag/{{this.name}}">{{this.name}}</a>{{/each}}</p>
+                    <div class="cl">&nbsp;</div>
+                </header>
+                <div class="col-md-4 col-lg-3 img-holder poster-holder-container ">
+                    <a href="/movie/details/{{this.id}}"><img class="post-Image-link poster-image" src="{{this.poster_url}}" alt="" /></a>
+                    <a href="{{this.poster_url}}" class="btn-full-image popup group1"><span>FULL IMAGE</span></a>
+                </div>
+                <div class="col-md-8 col-lg-9 trailer-holder-container">
+                    <iframe class="trailer-holder"
+                            width="100%"
+                            height="315"
+                            src="https://www.youtube.com/embed/{{firstOrRandom this.youtube_trailers ../site.config.globalOptions.showRandomTrailer}}"
+                            frameborder="0"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- meta -->
+                <div class="meta">
+                    <div class="col-md-9">
+                        <span class="meta-data"><b>Release Date:</b>&nbsp;{{this.release_date}} ({{this.release_year}}) </span>
+                        <span class="meta-data"><b>Writers:</b>&nbsp;{{this.writers}}</span>
+                        <span class="meta-data"><b>Directors:</b>&nbsp;{{this.directors}} </span>
+                        <span class="meta-data"><b>Actors:</b>&nbsp;{{this.actors}} </span>
+                        <span class="meta-data">
+                                            <b>Languages:</b>&nbsp;{{this.languages}};&nbsp;
+                                            <b>Countries:</b>&nbsp;{{this.countries}} &nbsp;
+                                            <b>Awards:</b>&nbsp;{{this.awards}} &nbsp;
+                                        </span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="right right-sm">
+                            <div class="rating-holder">
+                                <div class="col-md-4 padding-LR-0">
+                                    <p class="movie-rating-text">imdb Rating:</p>
+                                </div>
+                                <div class="col-md-6 padding-LR-0">
+                                    <div class="rating">
+                                        <span style="width: {{#multiply this.rating 10}}{{this}}{{/multiply}}%;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 padding-LR-0">
+                                    <span>&nbsp;&nbsp;{{this.rating}}/10 &nbsp;&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="rating-holder">
+                                <div class="col-md-4 padding-LR-0">
+                                    <p class="movie-rating-text">Metascore:</p>
+                                </div>
+                                <div class="col-md-6 padding-LR-0">
+                                    <div class="rating">
+                                        <span style="width: {{this.metascore}}%;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 padding-LR-0">
+                                    <span>&nbsp;&nbsp;{{this.metascore}}/100&nbsp;&nbsp;</span>
+                                </div>
+                            </div>
+                            <a href="#" class="comments">59 comments</a>
+                        </div>
+                    </div>
+
+                    <div class="cl">&nbsp;</div>
+                </div>
+                <!-- end of meta -->
+                <!-- post-cnt -->
+                <div class="post-cnt">
+                    <p>{{this.plot}}</p>
+                </div>
+                <footer>
+                    {{#if ../isUserAuthorized}}
+                        <a class="btn btn-success btn-xs" href="/admin/movie/edit/{{this.id}}">Edit &raquo;</a>
+                        <a class="btn btn-danger btn-xs" href="/admin/movie/delete/{{this.id}}">Delete &raquo;</a>
+                    {{/if}}
+                    {{#if ../showDetailedArticle}}
+                        <a class="btn btn-success btn-xs" href="/comment/create/{{this.id}}">Add New Comment &raquo;</a>
+                        <a class="btn btn-success btn-xs" href="/comment/all/{{this.id}}">Show All Comments &raquo;</a>
+                        <a class="btn btn-default btn-xs" href="/">Back &raquo;</a>
+                    {{else}}
+                        <a class="btn btn-default btn-xs" href="/movie/details/{{this.id}}">Read more &raquo;</a>
+                    {{/if}}
+                </footer>
+                <!-- end of post-cnt -->
+            </div>
+
+            <!-- post-inner -->
+        </article>
+    </div>
+    <!-- comment section -->
+
+    {{#if ../showDetailedArticle}}
+        <div class="col-md-12 well">
+            <form class="form-horizontal" id="comment" method="POST" action="/comment/create/{{../this.id}}">
+                <fieldset>
+                    <legend>Add your comment for this movie</legend>
+                    <div class="form-group">
+                        <input type="text" value="{{../user.id}}" name="author" hidden>
+                        <input type="text" value="{{../this.id}}" name="about" hidden>
+
+                        <label class="col-sm-2 control-label" for="content">Your Comment:</label>
+                        <div class="col-sm-9 ">
+                            <textarea type="text" rows="1" class="form-control" id="content" placeholder="Comment" name="content"></textarea>
+                        </div>
+                        <div class="col-sm-1 ">
+                            <button type="submit" class="btn btn-success">Post</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        {{#if this.comments}}
+            {{#each this.comments}}
+                <div class="col-md-12 well">
+                    <div class="col-md-1 comment-user-icon-container">
+                        <span class="glyphicon glyphicon-user comment-user-icon"></span>
+                    </div>
+                    <div class="col-md-11">
+                        <div class="author-style">
+                            <span>&nbsp;{{this.author.fullName}}&nbsp;</span>
+                            <span>  - Whiten at: &nbsp;{{this.formatedDate}}</span>
+                        </div>
+                        <hr class="tagline-divider">
+                        <div class="comment-style">
+                            {{this.content}}
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        {{/if}}
+    {{/if}}
+{{/each}}

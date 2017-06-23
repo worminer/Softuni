@@ -1,0 +1,127 @@
+@import url("https://www.google.com/fonts#UsePlace:use/Collection:Vollkorn");
+
+body { 
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.title { 
+	font-size: 40px;
+	font-family:'Vollkorn', serif;
+	color: #778495;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+article { 
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 25px;
+	border: 2px solid #f8f9fb;
+	cursor: pointer;
+}
+
+article h2 { 
+	text-transform: capitalize;
+	font-size: 30px;
+	font-family:'Vollkorn', serif;
+	background-color: #ebeff2;
+	text-align: center;
+	color: #6e768b;
+	margin-top: 0px;
+	padding: 40px 0px;
+}
+
+article h3 { 
+	font-family: 'Vollkorn', serif;
+	font-size: 60px;
+	text-align: center;
+	color: #7f8d98;
+}
+
+article h4 { 
+	color: #897f7e;
+	border-bottom: 1px solid #f1f3f2;
+	padding-bottom: 5px;
+	font-family: Tahoma, sans-serif;
+	font-size: 16px;
+	margin-left: 28px;
+}
+
+.small { 
+	color: #897f7e;
+	border-bottom: 1px solid #f1f3f2;
+	padding-bottom: 5px;
+	font-family: Tahoma, sans-serif;
+	font-size: 16px;
+	margin-bottom: 159px;
+	margin-left: 28px;
+}
+
+.medium {
+color: #897f7e;
+	border-bottom: 1px solid #f1f3f2;
+	padding-bottom: 5px;
+	font-family: Tahoma, sans-serif;
+	font-size: 16px;
+	margin-bottom: 113px; 
+	margin-left: 28px;
+}
+
+article button { 
+	color: #fafbfd;
+	background-color: #dddddd;
+	padding: 25px 75px;
+	border: none;
+	border-radius: 15%;
+	text-transform: capitalize;
+	font-family: Tahoma, sans-serif;
+	font-size: 16px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	margin-left: 25px;
+
+}
+
+article:hover h2
+ {
+	text-transform: capitalize;
+	font-size: 30px;
+	font-family:'Vollkorn', serif;
+	background-color: #65d3e2;
+	text-align: center;
+	color: #6e768b;
+	margin-top: 0px;
+	padding: 40px 0px;
+	cursor: pointer;
+
+} 
+
+article:hover h3
+ { 
+	font-family: 'Vollkorn', serif;
+	font-size: 60px;
+	text-align: center;
+	color: #65d3e2;
+}
+
+article:hover button { 
+	color: #fafbfd;
+	background-color: #65d3e2;
+	padding: 25px 75px;
+	border: none;
+	border-radius: 15%;
+	text-transform: capitalize;
+	font-family: Tahoma, sans-serif;
+	font-size: 16px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	margin-left: 25px;
+
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {{site.titleOptions.siteTitle}}
+        {{#if site.titleOptions.LongTitles }}
+            {{#if subTitle }}
+                {{site.titleOptions.titleSeparator}}
+                {{subTitle}}
+            {{/if}}
+        {{/if}}
+    </title>
+
+    <!-- Bootstrap required CSS -->
+    <!--<link rel='stylesheet' href='/stylesheets/bootstrapDefault.css'/> -->
+    <link rel='stylesheet' href='/stylesheets/bootstrapSlate.css'/>
+    <!-- Alerts required CSS -->
+    <link rel="stylesheet" href="/stylesheets/sweetalert.css"/>
+    <!-- Template required CSS -->
+    <link rel="stylesheet" href="/stylesheets/template.css"/>
+    <link rel="stylesheet" href="/stylesheets/templateCB.css"/>
+    <!-- Other custom CSS -->
+    <link rel="stylesheet" href="/stylesheets/custom.css"/>
+
+    <!-- jquery JS -->
+    <script src="/javascripts/jquery-1.10.2.js"></script>
+    <!-- Template required JS -->
+    <script src="/javascripts/jquery.colorbox.js"></script>
+    <script src="/javascripts/modernizr.custom.js"></script>
+    <script src="/javascripts/functions.js"></script>
+    <!-- Bootstrap required JS -->
+    <script src="/javascripts/bootstrap.js"></script>
+    <!-- Alerts required JS -->
+    <script src="/javascripts/sweetalert.min.js"></script>
+</head>
+<body>
+<header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="height: 25px">
+                <div class="pull-right socials">
+                    <a href="http://facebook.com" class="facebook-ico">facebook-ico</a>
+                    <a href="http://twitter.com" class="twitter-ico">twitter-ico</a>
+                    <a href="http://youtube.com" class="you-tube-ico">you-tube-ico</a>
+                    <a href="https://www.linkedin.com" class="linkedin-ico">linkedin-ico</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 ">
+                <div class="" id="logo-container">
+                    <a href="/" class="navbar-brand brand-name" ><img src="/images/BEMPTVLogo.png" id="logo-style" alt=""></a>
+                </div>
+
+            </div>
+            <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 pull-right" >
+                <div class="navbar navbar-default text-uppercase" id="navigation">
+                    <div class="navbar-header">
+                        <!-- this makes the small buttons for mobile -->
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    {{#if user}}
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                {{#if isAdmin}}
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                            role="button" aria-expanded="false">Admin<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="/admin/movie/all">Movie: List all movies</a></li>
+                                            <li><a href="/admin/movie/create">Movie: Add new movie</a></li>
+                                            <li><a href="/admin/movie/imdb/">Movie: Add New Movie from imdb</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="/admin/user/all">Users</a></li>
+                                            <li><a href="/admin/genre/all">Categories</a></li>
+                                        </ul>
+                                    </li>
+                                {{/if}}
+
+                                <li><a href="/movie/search">Search</a></li>
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                        role="button" aria-expanded="false">about<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="/home/contact">Contact US</a></li>
+                                        <li><a href="/home/about">About US</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/user/logout">Logout</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a href="/user/details"><span class="glyphicon glyphicon-user"></span></a></li>
+                            </ul>
+                        </div>
+                    {{/if}}
+                    {{#unless user}}
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/user/register">Register</a></li>
+                                <li><a href="/user/login">Login</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-left">
+
+                            </ul>
+                        </div>
+                    {{/unless}}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+<!--ERROR BOX-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {{#if error }}
+                <h2>{{error}}</h2>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+    {{{body}}}
+
+</body>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="modal-footer custom-shadow-top col-md-12">
+                <div class="footer">
+                    <div class="col-md-6">
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a href="#">Show All</a></li>
+                                <li><a href="#">Latest Movies</a></li>
+                                <li><a href="#">Top Rated</a></li>
+                                <li><a href="#">Most Commented</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="copy">Copyright &copy; 2016 <span>|</span> This site is Designed for <a href="https://softuni.bg/" target="_blank">softuni.bg</a> as part of Software Technologies course!</p>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+</html>

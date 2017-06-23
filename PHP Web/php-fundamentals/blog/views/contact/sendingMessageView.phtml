@@ -1,0 +1,28 @@
+<!-- Blog Contact Form  -->
+<div class="col-md-8 col-md-offset-2">
+    <div class="login-panel panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Sending message to {#name}</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" action="../sendingMessage">
+                <fieldset>
+                    <div class="form-group col-md-6">
+                        <input class="form-control" placeholder="your name" name="senderName" type="text" required>
+                    </div>
+                    <div class="form-group col-md-6" >
+                        <input class="form-control" placeholder="E-mail" name="email" type="email" required>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" placeholder="your message here" name="message"></textarea>
+                    </div>
+                    <input type="hidden" value="{#name}" name="msgTo">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="send">
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- End of  Blog Contact Form  -->

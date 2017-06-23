@@ -1,0 +1,173 @@
+
+body { 
+	background: linear-gradient(to bottom, #567788 0%,#121f25 100%)
+	no-repeat center center;
+	margin: 0;
+	padding: 0;
+	font-family: ' Open Sans', sans-serif;
+	font-size: 14px;
+	color: #333333;
+}
+
+.main {
+	background-color: #CBD0D9;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.nav {
+	background-color: #eff4f7;
+	position: relative;
+	height: 80px;
+	margin-top: 40px;
+	z-index: 5;
+	margin-right: 30px;
+	margin-left: 30px;
+
+	
+}
+ul{
+		float: right;
+}
+.nav li { 
+	list-style: none;
+	display: inline-block;
+	padding: 20px 20px 0 20px;
+	margin-right: 20px;
+	
+
+
+}
+
+.nav li a { 
+	text-decoration: none;
+	color: #a4a8a9;
+	
+}
+
+ a:hover { 
+	cursor: pointer;
+	color: #333;
+	border-bottom: 3px solid #70e9ff;
+	padding-bottom: 23px;
+}
+
+.logo { 
+	position: absolute;
+	z-index: 0;
+	top: 20px;
+	left: 550px;
+	background: #ea3d51;
+	width: 90px;
+	height: 90px;
+	margin: 20px;
+}
+
+.brand {
+	text-transform: uppercase;
+	font-size: 50px;
+	font-weight: 900px;
+	color: #ffffff;
+	margin-top: 72px; 
+	text-align: center;
+	letter-spacing: 10px;
+}
+
+.main .book-title { 
+	position: relative;
+	z-index: 10;
+	color: #121f25;
+	font-size: 54px;
+	text-transform: uppercase;
+	top: 180px;
+}
+
+.main .book-genre { 
+	position: relative;
+	z-index: 3;
+	top: -80px;
+	left: 80px;
+	color: #6dffb8;
+	font-size: 120px;
+	text-transform: uppercase;
+}
+.book
+ { 
+	position: relative;
+	z-index: 8;
+	margin: 0 auto;
+	color: #ffffff;
+	width: 300px;
+	padding: 40px;
+	text-align: center;
+	background: linear-gradient(to bottom, #eb3c53 0%, #e6135c 100%) no-repeat center center;
+	
+}
+  img { 
+ 	display: block;
+ 	margin: 0 auto;
+ 	width: 100%;
+ 	max-width: 80px;
+ 	border-radius: 50%;
+ }
+  .stars { 
+ 	font-size: 25px;
+ 	margin: 10px; 
+ }
+
+  button { 
+ 	background: none;
+ 	border: 3px solid #70ecff;
+ 	text-transform: uppercase;
+ 	font-family: 12px;
+ 	color: #ffffff;
+ 	padding: 10px 25px;
+ }
+
+ button:hover { 
+ 	background: #70ecff;
+ 	border-color: #70ecff;
+ 	color: #348098;
+ }
+
+.chapter { 
+	position: relative;
+	z-index: 4;
+	top: -250px;
+	background: #ffffff;
+	margin: 50px;
+	padding: 250px 35px 35px 35px;
+}
+
+.chapter h1 {
+	color: #46ee97;
+	font-size: 42px;
+	text-transform: capitalize;
+}
+
+.chapter p { 
+	width: 70%;
+}
+
+.chapter button { 
+	background: none;
+	border: 3px solid #628291;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #333;
+	padding: 10px 25px;
+}
+
+.chapter button:hover { 
+	background: #628291;
+	cursor: pointer;
+	color: #6dffb8;
+}
+  
+
+
+
+
+
+  

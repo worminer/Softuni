@@ -1,0 +1,39 @@
+<!-- Blog Show  -->
+<div class="col-md-8 col-md-offset-2">
+    <div class="login-panel panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Edit Post</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post" action="/admin/editArticlePost/{#article_id}">
+                <fieldset>
+                    <div class="form-group"  >
+                        <input type="hidden" name="id" value="{#article_id}">
+                        <input class="form-control" type="text" name="title" value="{#title}" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="content" id="" cols="95" rows="10">{#content}</textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <select multiple="multiple" name="selected_categories[]" class="form-control">
+                            {{#each categoriesAD}}
+                            <option value="{{value['category_id']}}" selected>{{value['name']}}</option>
+                            {{/each}}
+                            {{#each categoriesNA}}
+                            <option value="{{value['id']}}">{{value['name']}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Edit post" name="editArticle" >
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- End of  Blog Show  -->

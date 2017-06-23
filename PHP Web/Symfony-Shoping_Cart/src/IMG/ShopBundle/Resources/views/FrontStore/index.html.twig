@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="row">
+        <div class="col-md-3">
+            {{ include('IMGShopBundle:Partial:SideMenu.html.twig') }}
+        </div>
+        <div class="col-md-9 text-center well">
+            <h1>Our Best Categories</h1>
+            {% for category in categories|sortbyfield('items','desc') %}
+                <a href="{{ path('shop_category_items',{'id': category.id}) }}" class="category-group-link">
+                    <div class="category-group col-md-4">
+                        <div class="category-group-title">
+                            <h3>{{ category.name }}</h3>
+                        </div>
+                        <div class="category-group-image-holder">
+                            {% if category.frontImage %}
+                                <img src="/resources/images/shop/categories/{{category.frontImage}}"
+                                     class="category-group-image"
+                                     alt="category image"
+                                >
+                            {% else %}
+                                <img src="{{ asset('resources/images/no-image.svg') }}"
+                                     class="category-group-image"
+                                     alt="category image"
+
+                                >
+                            {% endif %}
+                        </div>
+                        <div class="category-group-text">
+                            {{ category.description }}
+                        </div>
+                    </div>
+                </a>
+
+            {% endfor %}
+        </div>
+
+    </section>
+
+{% endblock %}

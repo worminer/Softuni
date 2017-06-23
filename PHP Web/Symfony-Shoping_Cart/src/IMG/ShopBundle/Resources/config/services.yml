@@ -1,0 +1,13 @@
+services:
+    twig.extension.sortbyfield:
+        class: Snilius\Twig\SortByFieldExtension
+        tags:
+            - { name: twig.extension }
+    img.shop.categories:
+        class: IMG\ShopBundle\Service\CategoriesService
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+
+#    img_shop.example:
+#        class: IMG\ShopBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

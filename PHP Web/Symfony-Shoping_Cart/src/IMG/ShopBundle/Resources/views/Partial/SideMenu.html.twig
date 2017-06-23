@@ -1,0 +1,15 @@
+<div class="well">
+    <h3>Categories</h3>
+    <ul class="list-group">
+        {% for category in categories_service.getCategoriesService %}
+            <li class="list-group-item">
+                <a href="{{ path('shop_category_items',{'id': category.id}) }}" class="side-menu-link">
+                    <span class="badge">{{ category.items.count }}</span>
+                    {{ category.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+

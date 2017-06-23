@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,900');
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #FFFFFF;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+}
+
+.main-nav {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.nav-ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+.nav-item {
+  text-align: center;
+  flex-grow: 1;
+  margin: 5px 20px;
+}
+
+.nav-item a {
+  color: #8a8a8a;
+  text-decoration: none;
+}
+.nav-item a:hover {
+  border-bottom: 2px solid #CFCFCF;
+}
+.solo-wireless,
+.power-beats {
+  margin-top: 50px;
+}
+.solo-content-container,
+.power-content-container{
+  display: inline-block;
+  vertical-align: top;
+  margin: 200px 75px;
+  width: 30%;
+}
+.solo-content-container h1{
+  text-align: left;
+  font-size: 3.5em;
+}
+.power-content-container h1{
+  margin-bottom: 0;
+  text-align: right;
+  font-size: 4em;
+}
+.solo-content-container h1,
+.power-content-container h1{
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.power-content-container h2 {
+  font-size: 1em;
+  margin-top: 0;
+  text-align: right;
+  text-transform: uppercase;
+
+}
+.power-content-container h2 span {
+  color: #747474;
+  font-weight: 400;
+}
+.solo-image,
+.power-beats-img {
+  display: inline-block;
+  width: 60%;
+}
+.btn-red {
+  text-decoration: none;
+  padding: 10px 30px;
+  background-color: #FF0000;
+  border-radius: 30px ;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  display: inline-block;
+}
+.beats-price {
+  font-weight: 900;
+  font-size: 1.7em;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.power-price-container {
+  line-height: 1.7em;
+}
+.free-months-item-container {
+  line-height: 70px;
+  padding-top: 30px;
+}
+.free-months {
+  text-align: center;
+  background-color: #575757;
+  min-height: 250px;
+}
+.free-months h1 {
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-weight: 100;
+  margin: 0;
+}
+.free-months-logo {
+  width:70px;
+  height: 70px;
+  margin-right: 30px;
+}
+.free-months-cta{
+  font-size: 2em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid #747474;
+  margin-bottom: 40px;
+}
+.give-life {
+  box-sizing: border-box;
+  background-color: #DADADA;
+}
+.give-life-left-image-container {
+  width: 49%;
+  display: inline-block;
+
+}
+.give-life-left-image-container img {
+  width: 100%;
+}
+.give-life-right-container {
+  margin-top: 30px;
+  width:50%;
+  vertical-align: top;
+  display: inline-block;
+}
+.give-life-content {
+  vertical-align: top;
+  display: inline-block;
+}
+.give-life-content h1{
+  margin-left: 119px;
+  color: #333333;
+  text-transform: uppercase;
+  width: 280px;
+  font-size: 8em;
+  font-weight: 900;
+}
+.give-life-content p{
+  display: inline-block;
+}
+.give-life-right-container {
+}
+.give-life-right-image-container {
+  display: inline-block;
+}
+.give-life-right-image-container img {
+  height: 750px;
+}
+.clear {
+  clear: both;
+}

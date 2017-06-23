@@ -1,0 +1,37 @@
+<!-- Blog Login Form  -->
+
+<div class="col-md-12">
+    <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Database Id</th>
+            <th>Article Title</th>
+            <th>Author Name</th>
+            <th>Author Username</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each articlesData}}
+        <tr>
+            <td>{{#number}}</td>
+            <td>{{value["article_id"]}}</td>
+            <td>{{value["title"]}}</td>
+            <td>{{value["real_name"]}}</td>
+            <th>{{value["username"]}}</th>
+            <td>
+                <a class="btn btn-warning" href='/Admin/articleEdit/{{value["article_id"]}}'>Edit</a>
+                <a class="btn btn-danger" href="/Admin/articleDelete/{{value['article_id']}}">Delete</a>
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td colspan="4">There are no Articles yet!</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<!-- End of  Blog Login Form  -->

@@ -1,0 +1,14 @@
+<main>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-6" th:each="category : ${categories}">
+                <header>
+                    <h2>
+                        <a th:href="@{/category/{id}(id=${category.id})}" th:text="${category.name + ' (' + #sets.size(category.articles) + ')'}">
+                        </a>
+                    </h2>
+                </header>
+            </div>
+        </div>
+    </div>
+</main>

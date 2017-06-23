@@ -1,0 +1,323 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body  {
+  font-size: 14px;
+  font-family: Roboto, SansSerif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+/*body > section, body >footer {*/
+  /*border:1px solid red;*/
+/*}*/
+
+/*beginning of header*/
+.top-header {
+  background: linear-gradient(
+    rgba(60,63,73,0.8),
+    rgba(60,63,73,0.8)
+  ), url(img/header-bg.png) ;
+  background-size: cover;
+  color: #FFFFFF;
+}
+
+.top-header .logo {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.6em;
+  margin: 20px;
+}
+
+.top-header nav {
+  float: right;
+  margin: 15px;
+}
+
+.top-header nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+.top-header nav li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.top-header .middle-subtitle {
+  width: 800px;
+  text-align: center;
+  margin: 100px auto 50px auto;
+}
+
+.top-header .middle-subtitle p {
+  font-size: 1.4em;
+  width: 430px;
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+}
+.top-header .middle-subtitle i {
+  font-size: 3em;
+  display: inline-block;
+  margin-left: 50px;
+}
+.top-header .bottom-items{
+  text-align: center;
+}
+.top-header .bottom-items ul{
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.top-header .bottom-items li{
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  width: 150px;
+  font-size: 0.6em;
+}
+
+.top-header .bottom-items li p{
+  margin-top: 20px;
+}
+
+
+/* end of header */
+/* outside the box section */
+.outside-the-box {
+  text-align: center;
+  position: relative;
+
+}
+.outside-the-box ul {
+  margin: 50px auto;
+}
+.outside-the-box li {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+  margin: 0 20px;
+}
+
+.outside-the-box li.left-box {
+  text-align: right;
+}
+.outside-the-box li.left-box p{
+  font-size: 1em;
+  font-weight: bolder;
+}
+.outside-the-box li.left-box span {
+  text-transform: capitalize;
+  font-size: 0.8em;
+
+}
+
+.outside-the-box li.middle-box {
+  text-align: left;
+}
+
+.outside-the-box li.middle-box p{
+  font-size: 0.8em;
+}
+.outside-the-box li.middle-box hr{
+  margin: 20px 0;
+}
+.outside-the-box li.middle-box span{
+  font-size: 0.9em;
+  font-weight: bolder;
+}
+
+.outside-the-box li.right-box img {
+ width: inherit;
+}
+.outside-the-box .right-overlay{
+
+  background-color: rgba(250,105,46,0.8);
+  float: left;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  height: 95%;
+  width: 200px;
+}
+
+.schedule {
+  background-color: #3c3f49;
+  color: #8b8b8b;
+  text-align: center;
+  padding: 50px 0;
+
+}
+
+.schedule h3  {
+  margin-left: 30px;
+  font-size: 0.9em;
+  width:250px;
+}
+.schedule ul {
+  text-align: center;
+  margin-left: 40px;
+}
+.schedule li {
+  display: inline-block;
+  width: 500px;
+  margin: 10px;
+  vertical-align: top;
+  text-align: left;
+  text-transform: capitalize;
+
+}
+.schedule li .orange-icon {
+  width: 30px;
+  height:30px;
+  text-align: center;
+  line-height: 30px;
+  color: #FFFFFF;
+  background-color: #FA692E;
+  border-radius: 50%;
+  font-size: 0.8em;
+}
+
+.schedule li span {
+  color: #FFFFFF;
+  padding: 0 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+/* Presenters section */
+.presenters {
+  text-align: center;
+
+}
+
+.presenters .header {
+  text-align: center;
+  vertical-align: middle;
+  margin: 20px;
+}
+
+.presenters .header h3  {
+  width: 250px;
+  display: inline-block;
+  text-align: left;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.presenters .header p  {
+  font-size: 0.8em;
+  width: 600px;
+
+  text-align: left;
+  display: inline-block;
+  font-weight: bold;
+  vertical-align: top;
+  margin: 20px 0;
+}
+.presenters ul {
+  margin: 50px 100px;
+}
+
+.presenters li {
+  box-shadow: 10px 10px 15px -5px rgba(0,0,0,0.25);
+  display: inline-block;
+  width: 300px;
+  margin: 20px ;
+  text-align: left;
+}
+
+.presenters .name, .presenters .job {
+  margin: 20px;
+}
+.presenters .name {
+  color: #000000;
+  text-transform: capitalize;
+
+}
+.presenters .job {
+  color: #FA692E;
+  text-transform: uppercase;
+
+}
+
+/* SPECIAL EVENT */
+
+.events {
+  background-color: #3C3F49;
+  text-align: center;
+  color: #CCCCCC;
+}
+.events .event-box {
+  border: 1px solid #CCCCCC;
+  width : 800px;
+  padding: 50px;
+  margin: 50px 0 ;
+  display: inline-block;
+}
+.events .event-box h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.events .event-box p {
+  margin: 50px 200px;
+}
+
+.events .subscribe input[type=text]{
+  background-color: #3C3F49;
+  border: none;
+  border-bottom: 2px solid #FA692E;
+  margin-right: 20px;
+}
+.events .subscribe input[type=submit]{
+  margin-left: 10px;
+  background-color: #FA692E;
+  border-radius: 25px;
+  font-size: 0.6em;
+  font-weight: 600;
+  padding: 10px 20px;
+  color: #FFFFFF;
+}
+/* FOOTER */
+footer {
+  background-color: #282A30;
+  padding: 20px;
+  text-transform: uppercase;
+}
+footer .left {
+  color: #FFFFFF;
+}
+footer .right {
+  color: #CCCCCC;
+  float: right;
+}
+.clear {
+  clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

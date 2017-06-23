@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Problem03</title>
+</head>
+<body>
+<b>Input:</b>
+<form action="studentExams.php" method="get">
+    <input name='string' size="100" value="Georgi Petrov - Java : 360,Marina - JavaScript : 200,Marina     -    JavaScript :     300,Vasil Dimitrov - PHP : 120,Vasil Dimitrov-PHP: 550,Vasil Dimitrov - PHP : 250"><br>
+    <input type="submit">
+</form>
+<p><b>Expected Output:</b></p>
+<table>
+<tr><th>Subject</th><th>Name</th><th>Result</th><th>MakeUpExams</th>
+<tr><td>Java</td><td>Georgi Petrov</td><td>360</td><td>0</td></tr>
+<tr><td>JavaScript</td><td>Marina</td><td>300</td><td>1</td></tr>
+<tr><td>PHP</td><td>Vasil Dimitrov</td><td>250</td><td>1</td></tr>
+</table>
+<br/>
+<b>Input:</b>
+<form action="studentExams.php" method="get">
+    <input name='string' size="100" value="Nikola Ivanov - PHP: 350,Johnny Bravo - PHP : 300,Johnny Bravo-PHP: 600,Johnny Bravo - PHP : 400"><br>
+    <input type="submit">
+</form>
+<p><b>Expected Output:</b></p>
+<table>
+<tr><th>Subject</th><th>Name</th><th>Result</th><th>MakeUpExams</th>
+<tr><td>PHP</td><td>Johnny Bravo</td><td>400</td><td>1</td></tr>
+<tr><td>PHP</td><td>Nikola Ivanov</td><td>350</td><td>0</td></tr>
+</table>
+<br/>
+</body>
+</html>

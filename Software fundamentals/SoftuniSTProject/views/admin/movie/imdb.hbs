@@ -1,0 +1,44 @@
+<div class="container body-content span=8 offset=2">
+    <div class="row">
+        <div class="well">
+            <legend>Add movie from imdb.com  - {{ user.fullName }}</legend>
+            <form class="form-horizontal" action="/admin/movie/imdb/name/" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="movieName">Search movie by name: </label>
+                        <div class="col-sm-4 ">
+                            <input type="text" class="form-control" id="movieName" value="{{searchedMovieName}}" name="movieName" required>
+
+                        </div>
+                        <div class="col-sm-4 ">
+                            <button type="submit" class="btn btn-success">Search</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <form class="form-horizontal" action="/admin/movie/imdb/id/" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="movieId">Search movie by imdb id: </label>
+                        <div class="col-sm-4 ">
+                            <input type="text" class="form-control" id="movieId" value="{{searchedMovieId}}" name="movieId" required>
+                        </div>
+                        <div class="col-sm-4 ">
+                            <button type="submit" class="btn btn-success">Search</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+            <a class="btn btn-default" href="#">Cancel</a>
+        </div>
+    </div>
+
+    <div class="row">
+        {{#if showSaveForm}}
+            <div class="well">
+                {{> imdbAddMovieForm}}
+            </div>
+        {{/if}}
+    </div>
+</div>

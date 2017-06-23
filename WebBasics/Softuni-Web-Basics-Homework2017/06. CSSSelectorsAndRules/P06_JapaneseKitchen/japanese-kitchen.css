@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0 auto;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  background-image: url('images/dark-wood.jpg');
+  width: 940px;
+}
+header{
+  height: 130px;
+  background-image: url('images/header-page.jpg');
+  opacity: 0.9;
+  margin: auto;
+
+}
+
+body header h1{
+  text-align: right;
+  font-size: 40px;
+  padding: 30px;
+}
+
+
+nav{
+  height: auto;
+  color: #FFFFFF;
+  margin: 3px auto;
+  background: url('images/header-page.jpg') 0 10px;
+  opacity: 0.9;
+}
+
+body nav ul li  {
+  display: inline-block;
+  list-style: none;
+  padding: 10px 15px;
+}
+
+
+body nav a {
+  font-size: 1.3em;
+  color: #ffffff;
+  text-decoration: none;
+
+
+}
+body nav a:hover {
+  color: #13171E;
+}
+
+main {
+  background-color: #ffffff;
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+
+
+}
+
+section.courses {
+  text-align: left;
+  float: left;
+  width: 650px;
+}
+
+section.courses article {
+  clear: both;
+  display: block;
+
+}
+
+section.courses figure{
+  width: 250px;
+  float: left;
+  padding: 25px;
+}
+
+section.courses img{
+  width: 250px;
+}
+section.courses figcaption {
+  color: #979694;
+}
+
+section.courses div {
+  text-align: left;
+}
+
+section.courses h2 {
+  color: #606260;
+  padding-top: 30px;
+}
+
+section.courses h3 {
+  color: #DDC072;;
+  padding-top: 5px;
+}
+
+section.courses article p {
+  color: #749BBD;
+  text-align: left;
+  font-size: 1.1em;
+  padding-top: 10px;
+}
+aside
+{
+  width: 250px;
+  float:left;
+  padding: 30px 10px 10px 20px;
+  color: #DD597C;
+}
+
+aside ul {
+  list-style: none;
+
+}
+
+aside ul a {
+  padding-left: 10px ;
+  text-decoration: none;
+  color: #DD597C;
+  line-height: 50px;
+}
+aside ul li:hover {
+  background-color: rgba(150,150,150,0.2);
+}
+
+footer {
+  clear: both;
+  line-height: 50px;
+  background-color: #AEACA8;
+  color: #FFFFFF;
+  text-align: center;
+}

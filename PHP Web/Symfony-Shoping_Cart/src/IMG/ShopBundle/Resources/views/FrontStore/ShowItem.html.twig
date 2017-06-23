@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="row">
+        <div class="col-md-3">
+            {{ include('IMGShopBundle:Partial:SideMenu.html.twig') }}
+        </div>
+        <div class="col-md-9">
+
+            <div >
+                <div class="col-md-4 item-image-container">
+                    {% if item.frontImage %}
+                        <img src="/resources/images/shop/items/{{item.frontImage}}"
+                             class="img-responsive item-group-image"
+                             alt="item image"
+                        >
+                    {% else %}
+                        <img src="{{ asset('resources/images/no-image.svg') }}"
+                             class="img-responsive item-group-image"
+                             alt="item image"
+                        >
+                    {% endif %}
+                </div>
+                <div class="col-md-8">
+                    <h3>{{ item.name }}</h3>
+                    <div class="well well-sm item-info-container">
+                        <div class="col-md-10">
+                            {{ form_start(buyForm,{'action': path('cart_process_item'), 'method': 'POST'}) }}
+                            {{ form_row(buyForm.item_id, {'attr': {'value':item.id}}) }}
+                            <table class="table table-striped table-hover table-bordered">
+                                {% if item.expireble %}
+                                    <tr>
+                                        <th>Expires at :</th>
+                                        <td>{{ item.expiresAt|date('Y-m-d H:i:s') }}</td>
+                                    </tr>
+                                {% endif %}
+                                <tr>
+                                    <th>Items in stock:</th>
+                                    <td>{{ item.quantity }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Price:</th>
+                                    <td>{{ item.price }}</td>
+                                </tr>
+                                <tr >
+                                    <th colspan="2">
+                                        <div class="col-md-3">
+                                            {{ form_label(buyForm.quantity) }}
+                                        </div>
+                                        <div class="col-md-6">
+                                            {{ form_row(buyForm.quantity, {'label': ' '})  }}
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{ form_widget(buyForm) }}
+                                        </div>
+                                        {% if cartQuantity > 0 %}
+                                            <div class="text-center text-danger">You currently have {{ cartQuantity }} in Cart</div>
+                                        {% endif %}
+                                    </th>
+                                </tr>
+
+                            </table>
+                            {{ form_end(buyForm) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 well well-lg">
+                <h3 class="text-center">Item Description</h3>
+                <div>
+                    {{ item.description|raw }}
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

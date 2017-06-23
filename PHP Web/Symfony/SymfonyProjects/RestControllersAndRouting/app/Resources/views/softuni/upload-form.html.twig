@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<section class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1 class="text-center"> Upload Form !</h1>
+            <form action="" method="POST" name="upload_form">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="article[title]">
+                </div>
+                <div class="form-group">
+                    <label>description</label>
+                    <textarea class="form-control" rows="10" name="article[description]"></textarea>
+                </div>
+                {{ form_row(form._token) }}
+                <input type="submit" name="submit" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</section>
+
+    
+{% endblock %}

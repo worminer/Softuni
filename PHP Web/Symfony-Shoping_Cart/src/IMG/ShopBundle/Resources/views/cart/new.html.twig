@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="row">
+        <h1>Card creation</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+
+        <ul>
+            <li>
+                <a href="{{ path('cart_manage') }}">Back to the list</a>
+            </li>
+        </ul>
+    </section>
+
+{% endblock %}
