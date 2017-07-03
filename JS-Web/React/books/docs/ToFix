@@ -1,0 +1,3 @@
+1: Pagination is not working very well ..
+- it changes the link but it is not changeing the content
+- after you click the next link it changes the link to the new one and then content to previous one..
