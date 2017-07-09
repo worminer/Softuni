@@ -1,39 +1,40 @@
-import React, {Component} from 'react';
+import React from 'react';
 
+import UserActions from '../actions/UserActions';
 import UserStore from '../stores/UserStore';
 
-import Navbar from "./Navbar";
 import Footer from './Footer';
+import Navbar from './Navbar';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = UserStore.getState();
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
 
-    this.onChange = this.onChange.bind(this);
-  }
+        this.state = UserStore.getState();
 
-  onChange (state) {
-    this.setState(state)
-  }
+        this.onChange = this.onChange.bind(this);
+    }
 
-  componentDidMount() {
-    UserStore.listen(this.onChange);
-    UserStore.loginUser();
-  }
+    onChange(state) {
+        this.setState(state);
+    }
 
-  componentWillUnMount() {
-    UserStore.unlisten(this.onChange);
-  }
+    componentDidMount() {
+        UserStore.listen(this.onChange);
+        UserActions.loginUser();
+    }
 
-  render() {
+    componentWillUnmount() {
+        UserStore.unlisten(this.onChange);
+    }
 
-    return (
-        <div>
-            <Navbar />
-            { this.props.children }
-            <Footer/>
-        </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Navbar />
+                {this.props.children}
+                <Footer />
+            </div>
+        );
+    }
 }

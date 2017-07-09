@@ -46,7 +46,7 @@ module.exports = {
                         return res.status(401).send({ message: err });
                     }
 
-                    res.status(200).send(req.user._id);
+                    res.status(200).send(req.user);
                 })
             })
         },
@@ -60,7 +60,7 @@ module.exports = {
             let userId = req.params.userId;
 
             User.findById(userId).then(user => {
-                if (!user) { return res.status(404).send({ message: 'User no longer exists' }) }
+                if (!user) { return res.status(404).send({ message: 'user no longer exists' }) }
 
                 res.status(200).send(user);
             })

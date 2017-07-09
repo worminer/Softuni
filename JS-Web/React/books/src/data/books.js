@@ -29,7 +29,7 @@ for (let i = 1; i <= bookCount; i++) {
     image : 'http://blog.bookprinting-china.com/xundi/upimages/201151701953317.jpg', // some dummy image
     price : Math.floor(Math.random()*100).toFixed(2),
     comments: [],
-    createdAt: Math.floor(Math.random()*10)
+    createdAt: Math.floor(Math.random()*10 + 1)
   };
   for (let j = Math.floor(Math.random()*maxCommentCount); j <= maxCommentCount; j++) {
     let comment = `Comment #${maxCommentCount - j + 1} is : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, illum?`;
@@ -52,6 +52,7 @@ export default {
   },
 
   getLastBooks: (limit, desc = false) => {
+    limit = (Number(limit) || 0);
     let books = booksDB.slice(0);
     books.sort((a, b)=>{
         return a.createdAt > b.createdAt ? -1 : 1;
@@ -113,9 +114,38 @@ export default {
 
   getBookInfo: (id) => {
     id = (parseInt(id,10) || 0);
-
+    let currentBook = {};
+    for (let bookIndex in booksDB) {
+      if (booksDB[bookIndex]._id !== id) {
+        continue;
+      }
+      currentBook = booksDB[bookIndex];
+    }
     return new Promise((resolve, reject)=>{
-      resolve (booksDB[id]);
+      resolve (currentBook);
+    });
+  },
+  
+  deleteBook : (id) => {
+    id = parseInt(id,10);
+    let status = 'fail';
+    for (let bookIndex in booksDB) {
+      bookIndex = parseInt(bookIndex,10);
+      if (booksDB[bookIndex]._id !== id) {
+        continue;
+      }
+
+      if (booksDB[bookIndex]) {
+        booksDB.splice(bookIndex,1);
+        status = 'success';
+      }
+    }
+
+    //
+    return new Promise((resolve, reject) => {
+      resolve({
+        status: status
+      });
     });
   },
 
@@ -151,18 +181,55 @@ export default {
   },
 
   getAuthorInfo(id){
-
     id = (parseInt(id,10) || 0);
-    let author = authorsDB[id-1];
+    let currentAuthor;
+    for (let author of authorsDB) {
+      if (author._id !== id) {
+        continue;
+      }
+      currentAuthor = author;
+    }
     let books = [];
     for (let book of booksDB) {
-      if (book.author._id === author._id) {
+      if (book.author._id === currentAuthor._id) {
         books.push(book);
       }
     }
-    author['books'] = books;
+    currentAuthor['books'] = books;
     return new Promise((resolve, reject)=>{
-      resolve (author);
+      resolve (currentAuthor);
+    });
+  },
+  deleteAuthor: (id) =>{
+    id = parseInt(id,10);
+    let status = 'fail';
+    let currentAuthor = '';
+    let booksRemoved = [];
+
+    for (let authorIndex in authorsDB) {
+      authorIndex = parseInt(authorIndex, 10);
+      if (authorsDB[authorIndex]._id !== id) {
+        continue;
+      }
+      currentAuthor = authorsDB[authorIndex];
+      for (let bookIndex in booksDB) {
+        bookIndex = parseInt(bookIndex,10);
+        if (booksDB[bookIndex].author === currentAuthor) {
+          booksRemoved.push(booksDB.splice(bookIndex,1)[0].title);
+        }
+      }
+
+      if (authorsDB[authorIndex]) {
+        authorsDB.splice(authorIndex,1);
+        status = 'success';
+      }
+    }
+    return new Promise((resolve, reject) => {
+      resolve({
+        status: status,
+        deletedAuthor: currentAuthor.name,
+        deletedBooks : booksRemoved
+      });
     });
   }
 }

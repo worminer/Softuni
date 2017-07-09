@@ -3,21 +3,35 @@ import {Link} from "react-router-dom";
 // components
 import Pagination from './Sub-Components/Pagination';
 import SortByBtn from './Sub-Components/SortByBtn';
-//data
-import data from '../data/books';
+//booksDB
+import AuthorActions from '../actions/AuthorsActions';
+import AuthorStore from '../stores/AuthorsStore';
 
-export default class BooksPage extends Component{
+
+export default class AuthorsPage extends Component{
   constructor(props) {
     super(props);
 
-    this.state = {
-      authors : [],
-      paginationConfig: {}
-    };
+    this.state = AuthorStore.getState();
+
+    this.onChange = this.onChange.bind(this);
+    this.onDelete = this.onDelete.bind(this);
+  }
+
+  onChange(state){
+    //to prevent setState() before component mount
+    if (this.refs.root) {
+      this.setState(state);
+    }
   }
 
   componentDidMount() {
+    AuthorStore.listen(this.onChange);
+
     this.getPageItems(this.props);
+  }
+  componentWillUnMount() {
+    AuthorStore.unlisten(this.onChange);
   }
 
   componentWillReceiveProps(props) {
@@ -31,30 +45,29 @@ export default class BooksPage extends Component{
     let sortBy = (pageParams.sortBy || '');
     let sortType = (pageParams.sortType || '');
 
-    data.getAuthors(currentPage,sortBy, sortType,itemsPerPage).then(authors => {
-      let {items, ...config} = authors;
-      this.setState({
-        authors: items,
-        paginationConfig:config,
-      });
-    });
+    AuthorActions.getAllAuthors(currentPage,sortBy, sortType,itemsPerPage);
   }
 
-
+  onDelete(event){
+    let targetId = event.target.parentNode.parentNode.attributes.id.textContent;
+    AuthorActions.deleteBook(targetId);
+    this.getPageItems(this.props)
+  }
 
   render () {
-    let authorRows = this.state.authors.map(author => {
+    let authorsRows = this.state.allAuthors.map(author => {
       return (
-        <tr key={author._id}>
-          <th>{author._id}</th>
-          <th><img src={author.picture} alt="" style={{'height' : '20px'}}/></th>
-          <th><Link to={`/author/${author._id}`}>{author.name}</Link></th>
+        <tr key={author._id} id={author._id}>
+          <td>{author._id}</td>
+          <td><img src={author.picture} alt="" style={{'height' : '20px'}}/></td>
+          <td><Link to={`/author/${author._id}`}>{author.name}</Link></td>
+          <td><button className="btn btn-xs btn-danger" onClick={this.onDelete}>Delete</button></td>
         </tr>
       );
     });
 
     return (
-        <section className="row">
+        <section className="row" ref='root'>
           <table className="table table-striped table-hover">
             <thead>
             <tr>
@@ -71,10 +84,11 @@ export default class BooksPage extends Component{
                 />
                 )
               </th>
+              <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            {authorRows}
+            {authorsRows}
             </tbody>
           </table>
           <div className="text-center">

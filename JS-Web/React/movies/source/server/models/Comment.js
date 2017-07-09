@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 let commentSchema = mongoose.Schema({
-    // author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    // author: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
     content: { type: mongoose.Schema.Types.String, required: true },
     movie: { type: mongoose.Schema.Types.ObjectId },
     dateCreated: { type: mongoose.Schema.Types.Date, default: Date.now }

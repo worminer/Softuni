@@ -3267,7 +3267,7 @@ var RoutingContext = (function (_Component) {
             if (components.hasOwnProperty(key)) {
               // Pass through the key as a prop to createElement to allow
               // custom createElement functions to know which named component
-              // they're rendering, for e.g. matching up to fetched data.
+              // they're rendering, for e.g. matching up to fetched booksDB.
               elements[key] = _this.createElement(components[key], _extends({
                 key: key }, props));
             }
@@ -4249,7 +4249,7 @@ if (ExecutionEnvironment.canUseDOM && 'documentMode' in document) {
 // useful, so we don't use it.
 var canUseTextInputEvent = ExecutionEnvironment.canUseDOM && 'TextEvent' in window && !documentMode && !isPresto();
 
-// In IE9+, we have access to composition events, but the data supplied
+// In IE9+, we have access to composition events, but the booksDB supplied
 // by the native compositionend event may be incorrect. Japanese ideographic
 // spaces, for instance (\u3000) are not recorded correctly.
 var useFallbackCompositionData = ExecutionEnvironment.canUseDOM && (!canUseCompositionEvent || documentMode && documentMode > 8 && documentMode <= 11);
@@ -4370,8 +4370,8 @@ function isFallbackCompositionEnd(topLevelType, nativeEvent) {
 }
 
 /**
- * Google Input Tools provides composition data via a CustomEvent,
- * with the `data` property populated in the `detail` object. If this
+ * Google Input Tools provides composition booksDB via a CustomEvent,
+ * with the `booksDB` property populated in the `detail` object. If this
  * is available on the event object, use it. If not, this is a plain
  * composition event and we have nothing special to extract.
  *
@@ -4429,7 +4429,7 @@ function extractCompositionEvent(topLevelType, topLevelTarget, topLevelTargetID,
   var event = SyntheticCompositionEvent.getPooled(eventType, topLevelTargetID, nativeEvent, nativeEventTarget);
 
   if (fallbackData) {
-    // Inject data generated from fallback path into the synthetic event.
+    // Inject booksDB generated from fallback path into the synthetic event.
     // This matches the property of native CompositionEventInterface.
     event.data = fallbackData;
   } else {
@@ -5548,7 +5548,7 @@ var DOMPropertyInjection = {
    * with the following properties:
    *
    * isCustomAttribute: function that given an attribute name will return true
-   * if it can be inserted into the DOM verbatim. Useful for data-* or aria-*
+   * if it can be inserted into the DOM verbatim. Useful for booksDB-* or aria-*
    * attributes where it's impossible to enumerate all of the possible
    * attribute names,
    *
@@ -5653,7 +5653,7 @@ var defaultValueCache = {};
  */
 var DOMProperty = {
 
-  ID_ATTRIBUTE_NAME: 'data-reactid',
+  ID_ATTRIBUTE_NAME: 'booksDB-reactid',
 
   /**
    * Map from property "standard name" to an object with info about how to set
@@ -5809,7 +5809,7 @@ if (process.env.NODE_ENV !== 'production') {
     warnedProperties[name] = true;
     var lowerCasedName = name.toLowerCase();
 
-    // data-* attributes should be lowercase; suggest the lowercase version
+    // booksDB-* attributes should be lowercase; suggest the lowercase version
     var standardName = DOMProperty.isCustomAttribute(lowerCasedName) ? lowerCasedName : DOMProperty.getPossibleStandardName.hasOwnProperty(lowerCasedName) ? DOMProperty.getPossibleStandardName[lowerCasedName] : null;
 
     // For now, only warn when we have a suggested correction. This prevents
@@ -5997,7 +5997,7 @@ var getMarkupWrap = require('fbjs/lib/getMarkupWrap');
 var invariant = require('fbjs/lib/invariant');
 
 var OPEN_TAG_NAME_EXP = /^(<[^ \/>]+)/;
-var RESULT_INDEX_ATTR = 'data-danger-index';
+var RESULT_INDEX_ATTR = 'booksDB-danger-index';
 
 /**
  * Extracts the `nodeName` from a string of markup.
@@ -8750,7 +8750,7 @@ var ReactClassInterface = {
 
   /**
    * Invoked when the component is initially created and about to be mounted.
-   * This may have side effects, but any external subscriptions or data created
+   * This may have side effects, but any external subscriptions or booksDB created
    * by this method must be cleaned up in `componentWillUnmount`.
    *
    * @optional
@@ -9130,7 +9130,7 @@ function bindAutoBindMethod(component, method) {
         args[_key - 1] = arguments[_key];
       }
 
-      // User is trying to bind() an autobound method; we effectively will
+      // user is trying to bind() an autobound method; we effectively will
       // ignore the value of "this" that the user is trying to use, so
       // let's warn.
       if (newThis !== component && newThis !== null) {
@@ -14808,7 +14808,7 @@ var adler32 = require('./adler32');
 var TAG_END = /\/?>/;
 
 var ReactMarkupChecksum = {
-  CHECKSUM_ATTR_NAME: 'data-react-checksum',
+  CHECKSUM_ATTR_NAME: 'booksDB-react-checksum',
 
   /**
    * @param {string} markup Markup string
@@ -15226,7 +15226,7 @@ TopLevelWrapper.prototype.render = function () {
  *   );
  *
  *   <div id="container">                   <-- Supplied `container`.
- *     <div data-reactid=".3">              <-- Rendered reactRoot of React
+ *     <div booksDB-reactid=".3">              <-- Rendered reactRoot of React
  *       // ...                                 component.
  *     </div>
  *   </div>
@@ -15548,7 +15548,7 @@ var ReactMount = {
 
     if (process.env.NODE_ENV !== 'production') {
       // This will throw on the next line; give an early warning
-      process.env.NODE_ENV !== 'production' ? warning(deepestAncestor != null, 'React can\'t find the root component node for data-reactid value ' + '`%s`. If you\'re seeing this message, it probably means that ' + 'you\'ve loaded two copies of React on the page. At this time, only ' + 'a single copy of React can be loaded at a time.', targetID) : undefined;
+      process.env.NODE_ENV !== 'production' ? warning(deepestAncestor != null, 'React can\'t find the root component node for booksDB-reactid value ' + '`%s`. If you\'re seeing this message, it probably means that ' + 'you\'ve loaded two copies of React on the page. At this time, only ' + 'a single copy of React can be loaded at a time.', targetID) : undefined;
     }
 
     firstChildren[0] = deepestAncestor.firstChild;
@@ -16481,7 +16481,7 @@ var invariant = require('fbjs/lib/invariant');
  *   });
  *
  * Refs should rarely be used. When refs are used, they should only be done to
- * control data that is not handled by React's data flow.
+ * control booksDB that is not handled by React's booksDB flow.
  *
  * @class ReactOwner
  */
@@ -17669,7 +17669,7 @@ var ReactUpdateQueue = {
     if (process.env.NODE_ENV !== 'production') {
       var owner = ReactCurrentOwner.current;
       if (owner !== null) {
-        process.env.NODE_ENV !== 'production' ? warning(owner._warnedAboutRefsInRender, '%s is accessing isMounted inside its render() function. ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', owner.getName() || 'A component') : undefined;
+        process.env.NODE_ENV !== 'production' ? warning(owner._warnedAboutRefsInRender, '%s is accessing isMounted inside its render() function. ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale booksDB from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', owner.getName() || 'A component') : undefined;
         owner._warnedAboutRefsInRender = true;
       }
     }
@@ -20181,7 +20181,7 @@ var isUnitlessNumber = CSSProperty.isUnitlessNumber;
 function dangerousStyleValue(name, value) {
   // Note that we've removed escapeTextForBrowser() calls here since the
   // whole string will be escaped when the attribute is injected into
-  // the markup. If you provide unsafe user data here they can inject
+  // the markup. If you provide unsafe user booksDB here they can inject
   // arbitrary CSS which may be problematic (I couldn't repro this):
   // https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
   // http://www.thespanner.co.uk/2007/11/26/ultimate-xss-css-injection/
@@ -20329,7 +20329,7 @@ function findDOMNode(componentOrElement) {
   if (process.env.NODE_ENV !== 'production') {
     var owner = ReactCurrentOwner.current;
     if (owner !== null) {
-      process.env.NODE_ENV !== 'production' ? warning(owner._warnedAboutRefsInRender, '%s is accessing getDOMNode or findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', owner.getName() || 'A component') : undefined;
+      process.env.NODE_ENV !== 'production' ? warning(owner._warnedAboutRefsInRender, '%s is accessing getDOMNode or findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale booksDB from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', owner.getName() || 'A component') : undefined;
       owner._warnedAboutRefsInRender = true;
     }
   }
@@ -23007,7 +23007,7 @@ var invariant = require('./invariant');
 /**
  * Convert array-like objects to arrays.
  *
- * This API assumes the caller knows the contents of the data type. For less
+ * This API assumes the caller knows the contents of the booksDB type. For less
  * well defined inputs use createArrayFromMixed.
  *
  * @param {object|function|filelist} obj
@@ -24739,7 +24739,7 @@ module.exports = require('./lib/React');
     });
     source += "';\n";
 
-    // If a variable is not specified, place data values in local scope.
+    // If a variable is not specified, place booksDB values in local scope.
     if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
 
     source = "var __t,__p='',__j=Array.prototype.join," +

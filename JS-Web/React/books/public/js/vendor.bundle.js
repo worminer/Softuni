@@ -168,7 +168,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
 
     /**
      * Invoked when the component is initially created and about to be mounted.
-     * This may have side effects, but any external subscriptions or data created
+     * This may have side effects, but any external subscriptions or booksDB created
      * by this method must be cleaned up in `componentWillUnmount`.
      *
      * @optional
@@ -646,7 +646,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
           args[_key - 1] = arguments[_key];
         }
 
-        // User is trying to bind() an autobound method; we effectively will
+        // user is trying to bind() an autobound method; we effectively will
         // ignore the value of "this" that the user is trying to use, so
         // let's warn.
         if (newThis !== component && newThis !== null) {
@@ -1128,7 +1128,7 @@ var invariant = require('./invariant');
 /**
  * Convert array-like objects to arrays.
  *
- * This API assumes the caller knows the contents of the data type. For less
+ * This API assumes the caller knows the contents of the booksDB type. For less
  * well defined inputs use createArrayFromMixed.
  *
  * @param {object|function|filelist} obj
@@ -4053,7 +4053,7 @@ if (ExecutionEnvironment.canUseDOM && 'documentMode' in document) {
 // useful, so we don't use it.
 var canUseTextInputEvent = ExecutionEnvironment.canUseDOM && 'TextEvent' in window && !documentMode && !isPresto();
 
-// In IE9+, we have access to composition events, but the data supplied
+// In IE9+, we have access to composition events, but the booksDB supplied
 // by the native compositionend event may be incorrect. Japanese ideographic
 // spaces, for instance (\u3000) are not recorded correctly.
 var useFallbackCompositionData = ExecutionEnvironment.canUseDOM && (!canUseCompositionEvent || documentMode && documentMode > 8 && documentMode <= 11);
@@ -4172,8 +4172,8 @@ function isFallbackCompositionEnd(topLevelType, nativeEvent) {
 }
 
 /**
- * Google Input Tools provides composition data via a CustomEvent,
- * with the `data` property populated in the `detail` object. If this
+ * Google Input Tools provides composition booksDB via a CustomEvent,
+ * with the `booksDB` property populated in the `detail` object. If this
  * is available on the event object, use it. If not, this is a plain
  * composition event and we have nothing special to extract.
  *
@@ -4227,7 +4227,7 @@ function extractCompositionEvent(topLevelType, targetInst, nativeEvent, nativeEv
   var event = SyntheticCompositionEvent.getPooled(eventType, targetInst, nativeEvent, nativeEventTarget);
 
   if (fallbackData) {
-    // Inject data generated from fallback path into the synthetic event.
+    // Inject booksDB generated from fallback path into the synthetic event.
     // This matches the property of native CompositionEventInterface.
     event.data = fallbackData;
   } else {
@@ -5611,7 +5611,7 @@ var DOMPropertyInjection = {
    * with the following properties:
    *
    * isCustomAttribute: function that given an attribute name will return true
-   * if it can be inserted into the DOM verbatim. Useful for data-* or aria-*
+   * if it can be inserted into the DOM verbatim. Useful for booksDB-* or aria-*
    * attributes where it's impossible to enumerate all of the possible
    * attribute names,
    *
@@ -5713,8 +5713,8 @@ var ATTRIBUTE_NAME_START_CHAR = ':A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\
  * @see http://jsperf.com/key-missing
  */
 var DOMProperty = {
-  ID_ATTRIBUTE_NAME: 'data-reactid',
-  ROOT_ATTRIBUTE_NAME: 'data-reactroot',
+  ID_ATTRIBUTE_NAME: 'booksDB-reactid',
+  ROOT_ATTRIBUTE_NAME: 'booksDB-reactroot',
 
   ATTRIBUTE_NAME_START_CHAR: ATTRIBUTE_NAME_START_CHAR,
   ATTRIBUTE_NAME_CHAR: ATTRIBUTE_NAME_START_CHAR + '\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040',
@@ -7205,7 +7205,7 @@ var HAS_POSITIVE_NUMERIC_VALUE = DOMProperty.injection.HAS_POSITIVE_NUMERIC_VALU
 var HAS_OVERLOADED_BOOLEAN_VALUE = DOMProperty.injection.HAS_OVERLOADED_BOOLEAN_VALUE;
 
 var HTMLDOMPropertyConfig = {
-  isCustomAttribute: RegExp.prototype.test.bind(new RegExp('^(data|aria)-[' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$')),
+  isCustomAttribute: RegExp.prototype.test.bind(new RegExp('^(booksDB|aria)-[' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$')),
   Properties: {
     /**
      * Standard Properties
@@ -12157,7 +12157,7 @@ if (process.env.NODE_ENV !== 'production') {
     warnedProperties[name] = true;
     var lowerCasedName = name.toLowerCase();
 
-    // data-* attributes should be lowercase; suggest the lowercase version
+    // booksDB-* attributes should be lowercase; suggest the lowercase version
     var standardName = DOMProperty.isCustomAttribute(lowerCasedName) ? lowerCasedName : DOMProperty.getPossibleStandardName.hasOwnProperty(lowerCasedName) ? DOMProperty.getPossibleStandardName[lowerCasedName] : null;
 
     var registrationName = EventPluginRegistry.possibleRegistrationNames.hasOwnProperty(lowerCasedName) ? EventPluginRegistry.possibleRegistrationNames[lowerCasedName] : null;
@@ -13464,7 +13464,7 @@ var TAG_END = /\/?>/;
 var COMMENT_START = /^<\!\-\-/;
 
 var ReactMarkupChecksum = {
-  CHECKSUM_ATTR_NAME: 'data-react-checksum',
+  CHECKSUM_ATTR_NAME: 'booksDB-react-checksum',
 
   /**
    * @param {string} markup Markup string
@@ -13747,7 +13747,7 @@ TopLevelWrapper.isReactTopLevelWrapper = true;
  *   );
  *
  *   <div id="container">                   <-- Supplied `container`.
- *     <div data-reactid=".3">              <-- Rendered reactRoot of React
+ *     <div booksDB-reactid=".3">              <-- Rendered reactRoot of React
  *       // ...                                 component.
  *     </div>
  *   </div>
@@ -14579,7 +14579,7 @@ function isValidOwner(object) {
  *   });
  *
  * Refs should rarely be used. When refs are used, they should only be done to
- * control data that is not handled by React's data flow.
+ * control booksDB that is not handled by React's booksDB flow.
  *
  * @class ReactOwner
  */
@@ -15411,7 +15411,7 @@ var ReactUpdateQueue = {
     if (process.env.NODE_ENV !== 'production') {
       var owner = ReactCurrentOwner.current;
       if (owner !== null) {
-        process.env.NODE_ENV !== 'production' ? warning(owner._warnedAboutRefsInRender, '%s is accessing isMounted inside its render() function. ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', owner.getName() || 'A component') : void 0;
+        process.env.NODE_ENV !== 'production' ? warning(owner._warnedAboutRefsInRender, '%s is accessing isMounted inside its render() function. ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale booksDB from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', owner.getName() || 'A component') : void 0;
         owner._warnedAboutRefsInRender = true;
       }
     }
@@ -17908,7 +17908,7 @@ var styleWarnings = {};
 function dangerousStyleValue(name, value, component, isCustomProperty) {
   // Note that we've removed escapeTextForBrowser() calls here since the
   // whole string will be escaped when the attribute is injected into
-  // the markup. If you provide unsafe user data here they can inject
+  // the markup. If you provide unsafe user booksDB here they can inject
   // arbitrary CSS which may be problematic (I couldn't repro this):
   // https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
   // http://www.thespanner.co.uk/2007/11/26/ultimate-xss-css-injection/
@@ -18114,7 +18114,7 @@ function findDOMNode(componentOrElement) {
   if (process.env.NODE_ENV !== 'production') {
     var owner = ReactCurrentOwner.current;
     if (owner !== null) {
-      process.env.NODE_ENV !== 'production' ? warning(owner._warnedAboutRefsInRender, '%s is accessing findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', owner.getName() || 'A component') : void 0;
+      process.env.NODE_ENV !== 'production' ? warning(owner._warnedAboutRefsInRender, '%s is accessing findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale booksDB from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', owner.getName() || 'A component') : void 0;
       owner._warnedAboutRefsInRender = true;
     }
   }
@@ -21506,7 +21506,7 @@ var ReactComponentTreeHook = {
         nextChild.parentID = id;
         // TODO: This shouldn't be necessary but mounting a new root during in
         // componentWillMount currently causes not-yet-mounted components to
-        // be purged from our tree data so their parent id is missing.
+        // be purged from our tree booksDB so their parent id is missing.
       }
       !(nextChild.parentID === id) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Expected onBeforeMountComponent() parent and onSetChildren() to be consistent (%s has parents %s and %s).', nextChildID, nextChild.parentID, id) : _prodInvariant('142', nextChildID, nextChild.parentID, id) : void 0;
     }
@@ -24761,7 +24761,7 @@ module.exports = require('./lib/React');
     });
     source += "';\n";
 
-    // If a variable is not specified, place data values in local scope.
+    // If a variable is not specified, place booksDB values in local scope.
     if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
 
     source = "var __t,__p='',__j=Array.prototype.join," +

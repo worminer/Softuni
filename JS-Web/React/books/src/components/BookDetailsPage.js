@@ -1,29 +1,35 @@
 import React,{Component} from 'react';
-
-import data from './../data/books';
 import {Link} from "react-router-dom";
 
+//booksDB
+import BooksStore from '../stores/BooksStore';
+import BooksActions from '../actions/BooksActions';
 
 export default class BooksDetailsPage extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      bookInfo : {}
+    this.state = BooksStore.getState();
+    this.onChange = this.onChange.bind(this);
+  }
 
-    };
+  onChange(state) {
+    this.setState(state);
   }
 
   componentDidMount() {
+    BooksStore.listen(this.onChange);
+    this.getPageInfo();
+  }
+
+  componentWillUnMount() {
+    BooksStore.unlisten(this.onChange);
+  }
+
+  getPageInfo () {
     let pageParams = this.props.match.params;
     let id = (parseInt(pageParams.id,10) || 1);
-    data.getBookInfo(id).then(bookInfo => {
-      console.log(bookInfo)
-      this.setState({
-        bookInfo : bookInfo,
-      });
-
-    });
+    BooksActions.getBookInfo(id);
   }
 
   render () {
@@ -60,7 +66,7 @@ export default class BooksDetailsPage extends Component {
       }
       return result;
     };
-    if (this.state.bookInfo.comments) {
+    if (this.state.bookInfo && this.state.bookInfo.comments) {
       comments = this.state.bookInfo.comments.map((data, index) => {
         return <div key={index}>{data}</div>;
       });
@@ -68,7 +74,7 @@ export default class BooksDetailsPage extends Component {
     return (
       <section className="row">
         <div className="col-md-6">
-          <img src={this.state.bookInfo.image} alt=""/>
+          <img src={(this.state.bookInfo && this.state.bookInfo.image ? this.state.bookInfo.image : '')} alt=""/>
         </div>
         <div className="col-md-6">
           <h1>{this.state.bookInfo.title}</h1>

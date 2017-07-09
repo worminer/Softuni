@@ -25,9 +25,6 @@ export default class Header extends Component{
               <li>
                 <Link to={`/authors/`}>Authors</Link>
               </li>
-              <li>
-                <Link to={{pathname:'/books/all/2', }} >test</Link>
-              </li>
             </ul>
 
             <ul className="nav navbar-nav navbar-right">
