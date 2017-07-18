@@ -1,0 +1,13 @@
+
+
+
+
+
+
+add car errors :
+make:"Make must be more than 3 symbols."
+model:"Model must be more than 3 symbols."
+engine:"Engine must be more than 1 symbol."
+price:"Price must be a positive number."
+image:Image URL is required.
+year:"Year must be between 1950 and 2050."

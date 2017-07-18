@@ -22,7 +22,7 @@ export default class BooksDetailsPage extends Component {
     this.getPageInfo();
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     BooksStore.unlisten(this.onChange);
   }
 
